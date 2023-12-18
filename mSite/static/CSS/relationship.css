@@ -1,0 +1,51 @@
+
+/*”“≤‡œ‘ æœÍ«Èµƒ*/
+.relation_box{
+    position: fixed;
+    width: 35%; height: 500px;
+    border-radius: 5px;
+    right: 5%; top: 70px;
+    z-index: 19;
+    background-color: #333333;
+    background-image: linear-gradient(#3f3f3f, #262626);
+    opacity: 0.3;
+    box-shadow: 7px 7px 0 rgba(0,0,0,0.7);
+}
+.relation_box_p {
+    position: fixed;
+    width: 90%; height: 40%;
+    border-radius: 5px;
+    left: 5%; top: 60px;
+    z-index: 19;
+    background-color: #333333;
+    background-image: linear-gradient(#3f3f3f, #262626);
+    display: none;
+    opacity: 0.95;
+    box-shadow: 7px 7px 0 rgba(0,0,0,0.7);
+}
+
+.relation_box_photo {
+    width: 130px; height: 100%;
+    margin: 20px 15px 0 25px;
+}
+    .relation_box_photo img {
+        width: 100%;
+        border-radius: 5px;
+        background-color: rgb(255, 255, 255, 0.8);
+    }
+
+.relation_box_photo_p {
+    width: 100px; height: 100%;
+    margin: 15px 10px 0 20px;
+}
+    .relation_box_photo_p img {
+        width: 100%;
+        border-radius: 5px;
+        background-color: rgb(255, 255, 255, 0.8);
+    }
+
+.relation_box_line {
+    width: 85%; height: 1.5px;
+    border-radius: 1px;
+    background-color: rgb(255, 255, 255, 0.3);
+}

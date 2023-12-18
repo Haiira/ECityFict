@@ -1,0 +1,273 @@
+
+@font-face {
+    font-family: 'FZCuHeiSong'; /*方正粗黑宋*/
+    src: url(../fonts/FZCuHeiSong.eot);
+    src: url(../fonts/FZCuHeiSong.eot#iefix) format('embedded-opentype'),
+        url(../fonts/FZCuHeiSong.woff) format('woff'),
+        url(../fonts/FZCuHeiSong.ttf) format('truetype');
+}
+
+/*颜色*/
+:root {
+    --var-color-white: #d6d6d6; /* rgb(214, 214, 214) */
+    --var-color-blue: #7086ff; /* rgb(112, 134, 255) */
+    --var-color-lightblue: #b1c6ff; /* rgb(177, 198, 255) */
+    --var-color-darkblue: #000549; /* rgb(0, 5, 73) */
+}
+
+/*========统一格式样式========*/
+/*初始化元素，清除内外边距，设置默认鼠标*/
+* {
+    padding: 0; margin: 0; 
+    cursor: url(../images/cursor/pointer.png), default
+}
+/*清除a标签样式*/
+a {
+    text-decoration: none;
+    color: aliceblue;
+}
+    a:hover, a:visited, a:link, a:active {
+        color: var(--var-color-white);
+    }
+
+body {
+    background-color: rgb(3, 3, 3);
+    color: var(--var-color-white);
+    overflow-x: hidden; /*隐藏横向滚动条*/
+    padding-top: 40px;
+}
+/*滚动条样式*/
+body::-webkit-scrollbar {
+    width: 10px; /*竖滚动条的尺寸*/
+    }
+body::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: rgb(205, 205, 205, 0.6);
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.2);
+}
+    body::-webkit-scrollbar-thumb:hover {
+        background-color: rgb(220, 220, 220);
+    }
+
+body::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#BG {
+    position: fixed;
+    z-index: -100;
+    width: 100%;
+    overflow: hidden;
+    background-image: linear-gradient( rgb(40,40,40), rgb(3,3,3) );
+}
+.BG_image {
+    width: 100%; height: 1652px;
+    min-height: 750px;
+}
+
+/*透明主框图*/
+#main{
+    margin: auto;
+    width: 75%; height: 4000px;
+}
+
+/*网页抬头菜单栏*/
+.banner{
+    margin: auto; /*居中与文本居中*/
+    text-align: center;
+    width: 100%; min-height: 30px;
+    position: fixed;
+    left: 0; top: 0; z-index: 20;
+    padding: 10px 0px;
+    margin: 0 0 10px 0;
+    background-color: rgb(15, 15, 15);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+}/*菜单栏内部文字*/
+    .banner div {
+        display: inline-block;
+        width: 15%; min-width: 80px;
+        padding: 5px;
+        border-radius: 5px;
+        color: aliceblue;
+        background-color: rgba(225, 225, 225, 0.1);
+        cursor: pointer;
+        opacity: 0.7;
+        transition: all 0.5s;
+    }
+    .banner div:hover{
+        opacity: 1;
+        background-color: rgba(225, 225, 225, 0.9);
+        color: rgb(28, 28, 28);
+        font-weight: bold;
+        transition: all 0.5s;
+    }
+
+.banner_logo {
+    position: absolute;
+    left: 3%; top: -1px;
+    width: 20%;
+    max-width: 120px; max-height: 120px;
+    background-color: rgb(220, 220, 220, 0.05);
+    opacity: 0.9;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 10px 10px;
+}
+.banner_logo_p {
+    position: absolute;
+    left: 3%; top: 49px;
+    width: 20%;
+    max-width: 120px; max-height: 120px;
+    background-color: rgb(220, 220, 220, 0.05);
+    opacity: 0.9;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 0 0 10px 10px;
+}
+.banner_line {
+    position: fixed;
+    z-index: -10;
+    left: 10%;
+    width: 3px; height: 100%;
+    background-color: var(--var-color-blue);
+    opacity: 0;
+}
+
+/*透明盒子*/
+.box {
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+
+/*左下角声明*/
+.notice {
+    position: fixed;
+    left: 0px;
+    bottom: 0px;
+    padding: 5px;
+    z-index: 100;
+    background-color: rgb(28, 28, 28, 0.8);
+    color: rgb(240, 248, 255, 0.3);
+    font-size: small;
+}
+.notice:hover{
+    background-color: rgb(28, 28, 28);
+    color: rgb(240, 248, 255, 0.6);
+}
+
+/*ICP备案*/
+.ICP {
+    width: 100%;
+    height: 20px;
+    text-align: center; /*文本居中*/
+    background-color: black;
+    font-size: small;
+}
+    .ICP a {
+        color: rgb(240, 248, 255, 0.6);
+    }
+
+.ICP_float {
+    position: fixed;
+    height: 20px;
+    left: 5px;
+    bottom: 0px;
+    font-size: small;
+}
+    .ICP_float a {
+        color: rgb(0, 0, 0, 0.6);
+    }
+/*========================*/
+
+
+/*=======统一部件样式=======*/
+.line {
+    background-image: linear-gradient(to right, aliceblue, #526fff);
+    opacity: 0.6;
+    height: 2px;
+}
+.cube {
+    background-color: var(--var-color-darkblue);
+    width: 20px; height: 20px;
+    transform: rotate(45deg);
+    margin: 10px;
+}
+.backhome{
+    position: fixed;
+    top: 5px; left: 1%;
+    z-index: 25;
+    opacity: 0.6;
+    cursor: pointer;
+}
+    .backhome:hover {
+        opacity: 1;
+    }
+
+/*文字*/
+.blue {
+    color: var(--var-color-lightblue);
+    font-family: 'FZCuHeiSong';
+}
+/*========================*/
+
+
+/*========全局可用额外功能Class========*/
+/*切换鼠标小手*/
+.pointer {
+    cursor: pointer;
+}
+/*========================*/
+
+
+/*========加载页面动画========*/
+#loading{
+    position: fixed;/*固定位置*/
+    display: flex;/*出于居中需要使用弹性布局*/
+    flex-direction: column;/*item垂直方向排列*/
+    align-items: center;/*内容垂直居中*/
+    justify-content: center;/*内容水平居中*/
+    z-index: 50;
+    left: 0px; top: 0px;
+    width: 100%; height: 100%;
+    background-color: rgb(28, 28, 28);
+    color: aliceblue;
+}
+#loading span{
+    display: inline-block;
+    width: 15px; height: 20px;
+    margin: 4px;
+    background-color: rgb(226, 226, 226);
+    opacity: 0.2;
+    animation: load 1.5s ease infinite;
+    
+}
+@keyframes load {
+    0%,100% { opacity: 0.1; background-color: rgb(226, 226, 226); }
+    50% { opacity: 1; background-color: rgb(138, 216, 255); }
+}
+#load { height: 40px; }
+#load span:nth-child(1){ animation-delay: 0.12s; }
+#load span:nth-child(2){ animation-delay: 0.24s; }
+#load span:nth-child(3){ animation-delay: 0.36s; }
+#load span:nth-child(4){ animation-delay: 0.48s; }
+#load span:nth-child(5){ animation-delay: 0.6s; }
+/*========================*/
+
+/*========跟随鼠标方块动画========*/
+#square{
+    position: fixed;
+    z-index: -5;
+    width: 50px; height: 50px;
+    border-width: 4px;
+    border-style: groove;
+    border-color: #ff5773;
+    box-shadow: 10px rgba(0, 0, 0, 0.8);
+    opacity: 0;
+    animation: sqr_rotate 5s linear infinite;
+    transform: rotate(45deg)
+}
+@keyframes sqr_rotate {
+    0% {transform: rotateZ(765deg);}
+    100% {}
+}
+/*========================*/
