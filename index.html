@@ -19,7 +19,8 @@
 <body>
 
     <!--加载动画-->
-    <div id="loading" style="display:none">
+    <!--
+    <div id="loading">
         <div id="load">
             <span></span><span></span><span></span><span></span><span></span>
         </div>
@@ -27,6 +28,7 @@
         <div style="opacity: 0.4; margin-top: 20px;">首次加载可能需要花费数十秒</div>
         <div style="opacity: 0.4;">如果等待时间太长，可以待会儿再回来看看ヽ(´•ω•`)､</div>
     </div>
+    -->
 
     <!--移动方块-->
     <!--
@@ -89,28 +91,13 @@
         <a href="mSite/templates/relationship.html"><div>关系网</div></a>
         <a href="mSite/templates/pictorial.html"><div>角色图鉴</div></a>
             <div>人文地理</div>
-</div>
-    <div id="line" class="banner_line"></div>
+    </div><div id="line" class="banner_line"></div>
 
     <!--左下角虚构注意-->
     <div id="notice" class="notice">
         本世界观完全架空，当中提及的一切人物、团体、事件等纯属虚构，如有雷同纯属巧合。
     </div>
-    <script  type="text/javascript">
-        var notice = my$("notice")
-        notice.style.marginBottom = "0px";
 
-/*  舍去的滚动到底部留白
-        window.onscroll = function () {
-            if (getScrollTop() + getWindowHeight() >= getScrollHeight() - 20) {
-                var marg = 20 - (getScrollHeight() - (getScrollTop() + getWindowHeight())) + "px"
-            }
-            else {
-                var marg = "0px"
-            }
-                notice.style.marginBottom = marg;
-        }
-*/
     </script>
 
     <!--背景-->
@@ -168,7 +155,7 @@
                 <div class="cube"></div>
                 阵营简介
             </div>
-            <div class="index_world_content, index_world_content_P">
+            <div class="index_world_content index_world_content_P">
                 <p>
                 <span class="blue">安德罗萨</span> | <span class="gray">Enderosa</span><br/>
                 大陆中部的独立城邦，不归属任何势力的灰色地带。<br/>
@@ -195,6 +182,9 @@
                 </p>
             </div>
         </div>
+
+        <!--页面底部占位空白-->
+        <div style="height:100px"></div>
 
     </div>
     <script type="text/javascript">

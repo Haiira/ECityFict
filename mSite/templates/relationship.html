@@ -5,14 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="mSite/static/images/logo.png">
-    <link rel="stylesheet" href="mSite/static/CSS/style.css" />
-    <link rel="stylesheet" href="mSite/static/CSS/relationship.css" />
+    <link rel="shortcut icon" href="../static/images/logo.png" />
+    <link rel="stylesheet" href="../static/CSS/style.css" />
+    <link rel="stylesheet" href="../static/CSS/relationship.css" />
 
     <title>关系图谱 - 原木的OC世界观</title>
 
     <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
-    <script type="text/JavaScript" src="./static/JS/general.js"></script>
+    <script type="text/JavaScript" src="../static/JS/general.js"></script>
 </head>
 
 <body style="overflow-y: hidden;">
@@ -25,20 +25,22 @@
     </script>
 
     <!--加载动画-->
+    <!--
     <div id="loading">
         <div id="load">
             <span></span><span></span><span></span><span></span><span></span>
         </div>
         <div>Loading</div>
     </div>
+    -->
 
     <!--抬头菜单栏-->
-    <a href="/">
+    <a href="../../index.html">
         <div class="cube backhome" style="background-color: var(--var-color-white)"></div>
     </a>
     <div class="banner">
         <a href="javascript:location.reload()"><div>关系网</div></a>
-        <a href="/pictorial/"><div>角色图鉴</div></a>
+        <a href="pictorial.html"><div>角色图鉴</div></a>
         <div>人文地理</div>
     </div>
 
@@ -68,18 +70,22 @@
         </div>
     </div>
 
+    <script src="../static/JS/relationship.json?callback=getRelationship"></script>
+
     <!--引入D3库，绘图-->
-    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
     <script>
+
+        var dataL
+        var dataC
+
         $(document).ready(function () {
-            getRequest(showChart, 'relationship/getRelationship/')
+            dataL = dataRelationship.links
+            dataC = dataRelationship.characters
+            showChart()
         })
 
-        var dataPro
-
-        function showChart(res) {
-            var data = eval(res.split("@")[0])
-            dataPro = eval(res.split("@")[1])
+        function showChart() {
             var options = {};
             options.backgroundColor = "";
             options.nodesFontSize = 14;
@@ -88,11 +94,11 @@
             options.showExamples = true;
             options.examplesX = innerWidth / 2;
             options.examplesY = innerHeight / 2;
-            drawChart("divid", options, data);
+            drawChart("divid", options, dataL);
         }
 
 
-        function drawChart(divid, options, datas, dataFilter) {
+        function drawChart(divid, options, dLinks, dataFilter) {
             var backgroundColor = options.backgroundColor; //背景颜色
             var nodesFontType = options.nodesFontType; //节点字体
             var nodesFontSize = options.nodesFontSize; //节点字号
@@ -113,21 +119,19 @@
 
             var sourceDatas = {};
             sourceDatas.links = [];
-            for (var i = 0; i < datas.length; i++) {
+            for (var i = 0; i < dLinks.length; i++) {
                 var jsonObj = {};
-                jsonObj.cid = datas[i].fields.cid;
-                jsonObj.tid = datas[i].fields.tid;
-                jsonObj.source = datas[i].fields.source;
-                jsonObj.target = datas[i].fields.target;
-                jsonObj.relation = datas[i].fields.relation;
-                jsonObj.sourceImg = datas[i].fields.sourceimg;
-                jsonObj.targetImg = datas[i].fields.targetimg;
-                jsonObj.sourceColor = datas[i].fields.sourcecolor;
-                jsonObj.targetColor = datas[i].fields.targetcolor;
-                jsonObj.sourceRadius = datas[i].fields.sourceradius;
-                jsonObj.targetRadius = datas[i].fields.targetradius;
+                jsonObj.source = dLinks[i].source;
+                jsonObj.target = dLinks[i].target;
+                jsonObj.relation = dLinks[i].relation;
+                jsonObj.sourceImg = dLinks[i].sourceImg;
+                jsonObj.targetImg = dLinks[i].targetImg;
+                jsonObj.sourceColor = dLinks[i].sourceColor;
+                jsonObj.targetColor = dLinks[i].targetColor;
+                jsonObj.sourceRadius = dLinks[i].sourceRadius;
+                jsonObj.targetRadius = dLinks[i].targetRadius;
                 // 根据关系类型添加连接线的颜色
-                switch (datas[i].fields.relation) {
+                switch (dLinks[i].relation) {
                     case " ":
                     case "主教":
                     case "主任":
@@ -143,7 +147,6 @@
                     default:
                         jsonObj.lineColor = lineColor;
                 }
-                jsonObj.data = datas[i].fields.data;
                 sourceDatas.links.push(jsonObj);
             }
             var resourceLinks = sourceDatas.links;
@@ -211,24 +214,22 @@
             //关系对应颜色
             var relationColor = {};
 
-            for (var i = 0; i < links.length; i++) {
+            for (let i = 0; i < links.length; i++) {
                 links[i].source = nodes[links[i].source] || (nodes[links[i].source] = {
                     name: links[i].source,
                     id: links[i].cid,
                     color: links[i].sourceColor,
-                    image: links[i].sourceImg,
                     radius: links[i].sourceRadius
                 });
                 links[i].target = nodes[links[i].target] || (nodes[links[i].target] = {
                     name: links[i].target,
                     id: links[i].tid,
                     color: links[i].targetColor,
-                    image: links[i].targetImg,
                     radius: links[i].targetRadius
                 });
             }
 
-            var sourceData = datas;
+            var sourceData = dLinks;
             for (var i = 0; i < sourceData.length; i++) {
                 relationColor[sourceData[i].relation] = {
                     "relation": sourceData[i].relation,
@@ -297,7 +298,7 @@
                 .on('dblclick.zoom', null);
             // 背景图片
             var image = svg.append('image')
-                .attr('href', '/static/images/BG.png')
+                .attr('href', '../static/images/BG.png')
             // 缩放层（位置必须在 container 之前）
             var zoomOverlay = svg.append('rect')
                 .attr('width', width)
@@ -730,12 +731,12 @@
         // 鼠标点击改变简介
         function changeBox(id) {
             my$('relationBox').style.opacity = 0.95;
-            for (var i = 0; i < dataPro.length; i++) {
-                var pk = dataPro[i].pk
+            for (let key in dataC) {
+                let pk = key
 
                 // 开始赋值
                 if (pk == id) {
-                    var item = dataPro[i].fields
+                    let item = dataC[key]
                     my$("r_name").innerText = item.name  // 姓名
 
                     // 目标是人
@@ -743,11 +744,11 @@
                         my$("r_age").innerText = "（" + item.age + "）"
                         // 切换图片
                         // 在获取到新图片之前先替换加载图片
-                        my$("r_photo").src = "/static/images/loading.png"
+                        my$("r_photo").src = "./static/images/loading.png"
                         checkOut(changeImg, "static/images/" + id + "_head.png")
                         function changeImg(imgExist) {
                             if (imgExist) {
-                                my$("r_photo").src = "/static/images/" + id + "_head.png"
+                                my$("r_photo").src = "./static/images/" + id + "_head.png"
                             }
                         }
 
@@ -757,7 +758,7 @@
                         my$("r_text").style.maxWidth = "55%"
 
 
-                        // 目标是机构
+                     // 目标是机构
                     } else {
                         my$("r_age").innerText = ""
 
@@ -777,9 +778,5 @@
         }
     </script>
 
-
-    <div class="ICP_float">
-        <a href="https://beian.miit.gov.cn/" target="_blank">京ICP备2022035533</a>
-    </div>
 </body>
 </html>

@@ -19,52 +19,35 @@ $(document).ready(function () {
     }
 })
 
+window.onload = function () {
+    let mainMinHeight = getWindowHeight()  - 50 + "px"
+    let mainHeight = getScrollHeight() - 50 + "px"
+    my$("main").style.minHeight = mainMinHeight;
+    my$("main").style.height = mainHeight;
+}
+
+/*
 // 加载完成后关闭加载界面
 window.onload = function () {
     my$("loading").style.display = 'none';
 }
+*/
 
+/*
 // 主网站地址
 // var netAddr = 'http://www.ecityfict.com/'    // 服务器网址
 var netAddr = 'http://127.0.0.1:8000/'  // 本地测试网址
+*/
 
-// GET请求通用
-function getRequest(func, addr) {
-    let res
-    let xhr = new XMLHttpRequest();
+var dataRelationship
 
-    xhr.open('GET', netAddr + addr, true)
-    xhr.send()
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4) {
-            //执行完毕
-            res = xhr.response
-            func(res);
-        }
-    };
-    return
+function getRelationship(data){
+    dataRelationship = data
 }
 
 // 判断文件是否存在，向函数返回布尔值
 function checkOut(func, addr) {
-    let xhr;
 
-    if (window.XMLHttpRequest) {
-        xhr = new XMLHttpRequest();
-    } else {
-        xhr = new ActiveXObject("Microsoft.XMLHTTP");
-    }
-
-    xhr.open('GET', netAddr + addr, false)
-    xhr.send()
-    if (xhr.readyState == 4) {
-        if (xhr.status == 200) {
-            func(true)// 文件存在
-        } else {
-            func(false)// 文件不存在
-        }
-    }
     return
 }
 

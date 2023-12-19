@@ -31,6 +31,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS", "CSS", "{374C706A-0AC
 		mSite\static\CSS\style.css = mSite\static\CSS\style.css
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JSON", "JSON", "{9F9F2D08-B3B5-4661-85CB-F294714658D7}"
+	ProjectSection(SolutionItems) = preProject
+		mSite\static\JS\relationship.json = mSite\static\JS\relationship.json
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +44,7 @@ Global
 		{A05CE371-C282-4396-8A32-5FB4CB9F74AB} = {DAAF7176-FE5E-4F5B-B305-277DD36DFAEA}
 		{CF5535F0-A679-4775-9F2F-17490FDC66D6} = {DAAF7176-FE5E-4F5B-B305-277DD36DFAEA}
 		{374C706A-0ACC-406B-B882-D28AF9F0C498} = {DAAF7176-FE5E-4F5B-B305-277DD36DFAEA}
+		{9F9F2D08-B3B5-4661-85CB-F294714658D7} = {DAAF7176-FE5E-4F5B-B305-277DD36DFAEA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {7FC3CF2F-6573-463D-B187-39EBF2AEF873}
