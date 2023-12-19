@@ -2,7 +2,7 @@
 
 /*大标题背景*/
 .index_header_background{
-    background-image: url('../images/city.jpg');
+    background-image: url('https://pic.imgdb.cn/item/658183dbc458853aef5553e3.jpg');
     background-attachment: fixed;/*视差设置*/
     background-color: rgb(44, 40, 76);
     height: 350px;
