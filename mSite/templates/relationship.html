@@ -17,13 +17,6 @@
 
 <body style="overflow-y: hidden;">
 
-    <script>
-        console.log(checkAgent())
-        if (checkAgent() == 'Phone') {
-            window.location.replace("/?plat=Phone")
-        }
-    </script>
-
     <!--加载动画-->
     <!--
     <div id="loading">
@@ -67,6 +60,9 @@
             <div style="margin:20px 30px">
                 <p id="r_brief_2">N/A</p>
             </div>
+        </div>
+        <div id="r_close" class="relation_close" onClick="closeRelation()">
+            <img src="https://pic.imgdb.cn/item/6581d47cc458853aef839c67.png">
         </div>
     </div>
 
@@ -223,7 +219,6 @@
                     color: links[i].sourceColor,
                     radius: links[i].sourceRadius
                 });
-                console.log(links[i])
                 links[i].target = nodes[links[i].target] || (nodes[links[i].target] = {
                     name: links[i].target,
                     id: links[i].tID,
@@ -703,11 +698,10 @@
             // 鼠标点击节点事件
             function click(d, i) {
                 changeBox(d.id)
-                console.log(d)
             }
         }
 
-        // 分配編號
+        // 分配编号
         function setLinkNumber(group) {
             if (group.length == 0) return;
             if (group.length == 1) {
@@ -736,13 +730,13 @@
         function changeBox(id) {
             my$('relationBox').style.opacity = 0.95;
             for (let key in dataC) {
-                console.log("key:" + key + " id:" + id)
 
                 // 开始赋值
                 if (key == id) {
                     let item = dataC[key]
-                    console.log(item)
                     my$("r_name").innerText = item.name  // 姓名
+
+                    my$("relationBox").style.display = "block"
 
                     // 目标是人
                     if (key.length != 1) {
@@ -779,6 +773,20 @@
                     break
                 }
             }
+        }
+
+        function closeRelation(){
+            my$("relationBox").style.display = "none";
+            return
+        }
+    </script>
+
+    <script>
+        console.log(checkAgent())
+        if (checkAgent() == 'Phone') {
+            my$("relationBox").className = "relation_box_p";
+            my$("r_photobox").className = "relation_box_photo_p";
+            my$("r_close").style.display = "block";
         }
     </script>
 

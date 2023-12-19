@@ -122,7 +122,7 @@
         <!--关于OC的释义下拉框-->
         <div class="line" style="margin: 20px 0;"></div>
         <div style="display: flex; flex-direction: row;">
-            <div class="index_OC">
+            <div id="indexOC" class="index_OC">
                 <div class="index_OC_head">这是什么</div>
                 <div class="index_OC_content">
                     <p style="margin-bottom: 5px; color: var(--var-color-darkblue); font-family: 'FZCuHeiSong'; font-size: 105%">这是我的OC（即Original Character/原创角色）和他们所在的世界。</p>
@@ -200,6 +200,14 @@
             // console.log('(' + scrollTop + '/(' + scrollHeight + '-' + availHeight +')) * ('+mainHeight +'-'+ availHeight+'))')
             my$('BG').style.top = -move + 'px';
         })
+    </script>
+
+    <script>
+        console.log(checkAgent())
+        if (checkAgent() == 'Phone') {
+            my$("logo").className = "banner_logo_p";
+            my$("indexOC").className = "index_OC_p";
+        }
     </script>
 
 </body>

@@ -22,8 +22,14 @@ $(document).ready(function () {
 window.onload = function () {
     let mainMinHeight = getWindowHeight()  - 50 + "px"
     let mainHeight = getScrollHeight() - 50 + "px"
-    my$("main").style.minHeight = mainMinHeight;
-    my$("main").style.height = mainHeight;
+    try {
+        my$("main").style.minHeight = mainMinHeight;
+        my$("main").style.height = mainHeight;
+    }
+    catch(err) {
+        console.log("[Notice] 此页面没有Main组件")
+    }
+    
 }
 
 /*
