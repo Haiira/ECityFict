@@ -48,7 +48,7 @@ function getRelationship(data){
 // 判断文件是否存在，向函数返回布尔值
 function checkOut(func, addr) {
 
-    return
+    return false
 }
 
 // 获取滚动条在Y轴上的滚动距离

@@ -1,7 +1,7 @@
 getRelationship({
     "links" : [
 		{
-		"cID" : "0",
+		"sID" : "0",
 		"tID" : "01001",
 		"source" : "事务所",
 		"target" : "纳撒尼尔",
@@ -14,7 +14,7 @@ getRelationship({
 		"targetRadius" : 35,
 		},
 		{
-		"cID" : "1",
+		"sID" : "1",
 		"tID" : "17351",
 		"source" : "虚像长廊",
 		"target" : "赫林",
@@ -27,7 +27,7 @@ getRelationship({
 		"targetRadius" : 35,
 		},
 		{
-		"cID" : "2",
+		"sID" : "2",
 		"tID" : "26588",
 		"source" : "教团",
 		"target" : "亚历克斯",
@@ -40,7 +40,7 @@ getRelationship({
 		"targetRadius" : 35,
 		},
 		{
-		"cID" : "3",
+		"sID" : "3",
 		"tID" : "33572",
 		"source" : "阿卡斯",
 		"target" : "玛莎",
@@ -53,7 +53,7 @@ getRelationship({
 		"targetRadius" : 35,
 		},
 		{
-		"cID" : "01001",
+		"sID" : "01001",
 		"tID" : "04245",
 		"source" : "纳撒尼尔",
 		"target" : "贝拉",
@@ -66,7 +66,7 @@ getRelationship({
 		"targetRadius" : 30,
 		},
 		{
-		"cID" : "01001",
+		"sID" : "01001",
 		"tID" : "04246",
 		"source" : "纳撒尼尔",
 		"target" : "修泽亚",
@@ -79,7 +79,7 @@ getRelationship({
 		"targetRadius" : 30,
 		},
 		{
-		"cID" : "02633",
+		"sID" : "02633",
 		"tID" : "0",
 		"source" : "弗兰克",
 		"target" : "事务所",
@@ -92,7 +92,7 @@ getRelationship({
 		"targetRadius" : 40,
 		},
 		{
-		"cID" : "02633",
+		"sID" : "02633",
 		"tID" : "2",
 		"source" : "弗兰克",
 		"target" : "教团",
@@ -105,7 +105,7 @@ getRelationship({
 		"targetRadius" : 50,
 		},
 		{
-		"cID" : "02633",
+		"sID" : "02633",
 		"tID" : "09653",
 		"source" : "弗兰克",
 		"target" : "萨缪尔",
@@ -118,7 +118,7 @@ getRelationship({
 		"targetRadius" : 30,
 		},
 		{
-		"cID" : "04245",
+		"sID" : "04245",
 		"tID" : "0",
 		"source" : "贝拉",
 		"target" : "事务所",
@@ -131,7 +131,7 @@ getRelationship({
 		"targetRadius" : 50,
 		},
 		{
-		"cID" : "04245",
+		"sID" : "04245",
 		"tID" : "04246",
 		"source" : "贝拉",
 		"target" : "修则亚",
@@ -144,7 +144,7 @@ getRelationship({
 		"targetRadius" : 30,
 		},
 		{
-		"cID" : "04246",
+		"sID" : "04246",
 		"tID" : "0",
 		"source" : "修则亚",
 		"target" : "事务所",
@@ -157,7 +157,7 @@ getRelationship({
 		"targetRadius" : 50,
 		},
 		{
-		"cID" : "07651",
+		"sID" : "07651",
 		"tID" : "0",
 		"source" : "米夏",
 		"target" : "事务所",

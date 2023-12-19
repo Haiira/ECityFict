@@ -51,7 +51,7 @@
     <div id="relationBox" class="relation_box">
         <div style="display: flex;">
             <div id="r_photobox" class="relation_box_photo">
-                <img id="r_photo" src="/static/images/default_head.png" onerror="javascript:this.src='/static/images/default_head.png'" />
+                <img id="r_photo" src="https://pic.imgdb.cn/item/6581c21dc458853aef4af4b2.png"/>
             </div>
             <div id="r_text" style="margin: 30px 0 0 10px; max-width: 55%">
                 <h2 id="r_name" style="font-family: FZCuHeiSong, cursive, serif, sans-serif; font-weight:400; display: inline">N/A</h2>
@@ -123,6 +123,8 @@
                 var jsonObj = {};
                 jsonObj.source = dLinks[i].source;
                 jsonObj.target = dLinks[i].target;
+                jsonObj.sID = dLinks[i].sID;
+                jsonObj.tID = dLinks[i].tID;
                 jsonObj.relation = dLinks[i].relation;
                 jsonObj.sourceImg = dLinks[i].sourceImg;
                 jsonObj.targetImg = dLinks[i].targetImg;
@@ -217,13 +219,14 @@
             for (let i = 0; i < links.length; i++) {
                 links[i].source = nodes[links[i].source] || (nodes[links[i].source] = {
                     name: links[i].source,
-                    id: links[i].cid,
+                    id: links[i].sID,
                     color: links[i].sourceColor,
                     radius: links[i].sourceRadius
                 });
+                console.log(links[i])
                 links[i].target = nodes[links[i].target] || (nodes[links[i].target] = {
                     name: links[i].target,
-                    id: links[i].tid,
+                    id: links[i].tID,
                     color: links[i].targetColor,
                     radius: links[i].targetRadius
                 });
@@ -700,6 +703,7 @@
             // 鼠标点击节点事件
             function click(d, i) {
                 changeBox(d.id)
+                console.log(d)
             }
         }
 
@@ -732,20 +736,20 @@
         function changeBox(id) {
             my$('relationBox').style.opacity = 0.95;
             for (let key in dataC) {
-                let pk = key
+                console.log("key:" + key + " id:" + id)
 
                 // 开始赋值
-                if (pk == id) {
+                if (key == id) {
                     let item = dataC[key]
+                    console.log(item)
                     my$("r_name").innerText = item.name  // 姓名
 
                     // 目标是人
-                    if (pk.length != 1) {
+                    if (key.length != 1) {
                         my$("r_age").innerText = "（" + item.age + "）"
                         // 切换图片
                         // 在获取到新图片之前先替换加载图片
-                        my$("r_photo").src = "./static/images/loading.png"
-                        checkOut(changeImg, "static/images/" + id + "_head.png")
+                        checkOut(changeImg, "./static/images/" + id + "_head.png")
                         function changeImg(imgExist) {
                             if (imgExist) {
                                 my$("r_photo").src = "./static/images/" + id + "_head.png"
