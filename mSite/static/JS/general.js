@@ -46,10 +46,11 @@ var netAddr = 'http://127.0.0.1:8000/'  // 本地测试网址
 */
 
 var dataRelationship
+var dataGallery
 
-function getRelationship(data){
-    dataRelationship = data
-}
+function getRelationship(data){ dataRelationship = data }
+function getImg(data){ dataGallery = data }
+
 
 // 判断文件是否存在，向函数返回布尔值
 function checkOut(func, addr) {

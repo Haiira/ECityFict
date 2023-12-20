@@ -15,7 +15,7 @@
     <script type="text/JavaScript" src="../static/JS/general.js"></script>
 </head>
 
-<body style="overflow-y: hidden;">
+<body class="blockBody">
 
     <!--加载动画-->
     <!--
@@ -42,31 +42,37 @@
 
     <!--详情界面-->
     <div id="relationBox" class="relation_box">
-        <div style="display: flex;">
-            <div id="r_photobox" class="relation_box_photo">
-                <img id="r_photo" src="https://pic.imgdb.cn/item/6581c21dc458853aef4af4b2.png"/>
-            </div>
-            <div id="r_text" style="margin: 30px 0 0 10px; max-width: 55%">
-                <h2 id="r_name" style="font-family: FZCuHeiSong, cursive, serif, sans-serif; font-weight:400; display: inline">N/A</h2>
-                <p id="r_age" style="display:inline">（00）</p>
-                <p id="r_name_eng">None</p>
+        <div id="relationBoxInner" class="relation_box_inner">
+            <div style="display: flex;">
+                <!--头像-->
+                <div id="r_photobox" class="relation_box_photo">
+                    <img id="r_photo" src="https://pic.imgdb.cn/item/6581c21dc458853aef4af4b2.png"/>
+                </div>
+                <!--文本-->
+                <div id="r_text" style="margin: 20px 0 0 10px; max-width: 55%">
+                    <h2 id="r_name" style="font-family: FZCuHeiSong, cursive, serif, sans-serif; font-weight:400; display: inline">N/A</h2>
+                    <p id="r_age" style="display:inline">（00）</p>
+                    <p id="r_name_eng">None</p>
 
-                <div class="relation_box_line"></div>
+                    <div class="relation_box_line"></div>
 
-                <p id="r_brief_1" style="margin-top: 10px">N/A</p>
+                    <p id="r_brief_1" style="margin-top: 10px">N/A</p>
+                </div>
             </div>
+            <div id="r_text_2">
+                <div style="margin:20px 30px">
+                    <p id="r_brief_2">N/A</p>
+                </div>
         </div>
-        <div>
-            <div style="margin:20px 30px">
-                <p id="r_brief_2">N/A</p>
-            </div>
         </div>
+        <!--关闭按钮（移动端）-->
         <div id="r_close" class="relation_close" onClick="closeRelation()">
             <img src="https://pic.imgdb.cn/item/6581d47cc458853aef839c67.png">
         </div>
     </div>
 
     <script src="../static/JS/relationship.json?callback=getRelationship"></script>
+    <script src="../static/JS/gallery.json?callback=getImg"></script>
 
     <!--引入D3库，绘图-->
     <script src="https://cdn.bootcdn.net/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
@@ -74,10 +80,12 @@
 
         var dataL
         var dataC
+        var dataG
 
         $(document).ready(function () {
             dataL = dataRelationship.links
             dataC = dataRelationship.characters
+            dataG = dataGallery
             showChart()
         })
 
@@ -726,8 +734,14 @@
     </script>
 
     <script>
+
+        var rTextMargineCharactor = "20px 0 0 10px"
+        var rTextMargineOperation = "30px 0 0 30px"
+                        
         // 鼠标点击改变简介
         function changeBox(id) {
+            my$("relationBoxInner").style.height = $("#relationBox").height()-65 + "px"
+            my$("relationBoxInner").style.overflow = "auto"
             my$('relationBox').style.opacity = 0.95;
             for (let key in dataC) {
 
@@ -742,19 +756,17 @@
                     if (key.length != 1) {
                         my$("r_age").innerText = "（" + item.age + "）"
                         // 切换图片
-                        // 在获取到新图片之前先替换加载图片
-                        checkOut(changeImg, "./static/images/" + id + "_head.png")
-                        function changeImg(imgExist) {
-                            if (imgExist) {
-                                my$("r_photo").src = "./static/images/" + id + "_head.png"
-                            }
+                        if (dataG[key].id_picture){
+                            my$("r_photo").src = dataG[key].id_picture
+                        }else{
+                            my$("r_photo").src = "https://pic.imgdb.cn/item/6581c21dc458853aef4af4b2.png"
                         }
 
                         // 调整格式
                         my$("r_photobox").style.display = "block"
-                        my$("r_text").style.margin = "30px 0 0 10px"
+                        my$("r_text").style.margin = rTextMargineCharactor
                         my$("r_text").style.maxWidth = "55%"
-
+                        
 
                      // 目标是机构
                     } else {
@@ -762,7 +774,7 @@
 
                         // 调整格式
                         my$("r_photobox").style.display = "none"
-                        my$("r_text").style.margin = "30px 0 0 30px"
+                        my$("r_text").style.margin = rTextMargineOperation
                         my$("r_text").style.maxWidth = "70%"
                     }
 
@@ -782,11 +794,21 @@
     </script>
 
     <script>
+        // 手机访问时进行界面修改
         console.log(checkAgent())
         if (checkAgent() == 'Phone') {
             my$("relationBox").className = "relation_box_p";
             my$("r_photobox").className = "relation_box_photo_p";
+            my$("relationBoxInner").className = "relation_box_inner_p";
             my$("r_close").style.display = "block";
+
+            my$("r_name").style.fontSize = "140%"
+            my$("r_text").style.fontSize = "90%"
+            my$("r_text_2").style.fontSize = "90%"
+            my$("r_age").style.fontSize = "90%"
+
+            rTextMargineCharactor = "5px 0 0 0px"
+            rTextMargineOperation = "5px 0 0 25px"
         }
     </script>
 

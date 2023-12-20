@@ -7,8 +7,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{
 	ProjectSection(SolutionItems) = preProject
 		mSite\templates\404.html = mSite\templates\404.html
 		mSite\templates\500.html = mSite\templates\500.html
-		index.html = index.html
-		mSite\templates\index_p.html = mSite\templates\index_p.html
 		mSite\templates\pictorial.html = mSite\templates\pictorial.html
 		mSite\templates\relationship.html = mSite\templates\relationship.html
 	EndProjectSection
@@ -20,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JS", "JS", "{CF5535F0-A679-
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "static", "static", "{DAAF7176-FE5E-4F5B-B305-277DD36DFAEA}"
 	ProjectSection(SolutionItems) = preProject
+		index.html = index.html
 		README.md = README.md
 	EndProjectSection
 EndProject
@@ -32,6 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS", "CSS", "{374C706A-0AC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JSON", "JSON", "{9F9F2D08-B3B5-4661-85CB-F294714658D7}"
 	ProjectSection(SolutionItems) = preProject
+		mSite\static\JS\gallery.json = mSite\static\JS\gallery.json
 		mSite\static\JS\relationship.json = mSite\static\JS\relationship.json
 	EndProjectSection
 EndProject

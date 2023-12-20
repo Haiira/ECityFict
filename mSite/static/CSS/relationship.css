@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+.blockBody{
+    position: fixed;
+    width: 100%; height: 100%;
+    left: 0; top: 0;
+    overflow-y: hidden;
+}
+
 /*右侧显示详情的*/
 .relation_box{
     position: fixed;
@@ -25,9 +32,17 @@
     box-shadow: 7px 7px 0 rgba(0,0,0,0.7);
 }
 
+/*自适应效果父级元素的滚动条隐藏*/
+.relation_box_inner{
+    margin-top: 25px;
+}
+.relation_box_inner_p{
+    margin-top: 22px;
+}
+
 .relation_box_photo {
     width: 130px; height: 100%;
-    margin: 20px 15px 0 25px;
+    margin: 0px 15px 0 25px;
 }
     .relation_box_photo img {
         width: 100%;
@@ -37,7 +52,7 @@
 
 .relation_box_photo_p {
     width: 100px; height: 100%;
-    margin: 15px 10px 0 20px;
+    margin: 0px 10px 0 20px;
 }
     .relation_box_photo_p img {
         width: 100%;
@@ -60,7 +75,7 @@
      .relation_close img{
     width: 20px; height: 20px;
     }
-    .relation_close:hover{
+    .relation_close:hover:active{
         opacity: 0.9;
     }
    

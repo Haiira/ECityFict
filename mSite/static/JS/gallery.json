@@ -1,0 +1,57 @@
+getImg({
+	"09653" :{
+		"name" : "萨缪尔·布伦特",
+		"id_picture" : "https://pic.imgdb.cn/item/65828f53c458853aef67b4bc.png",
+		"CG" : [""],
+	},
+	"02633" :{
+		"name" : "弗兰克·阿尔瓦",
+		"id_picture" : "https://pic.imgdb.cn/item/65828f53c458853aef67b293.png",
+		"CG" : [""],
+	},
+	"07749" :{
+		"name" : "卡西亚·斯特拉斯",
+		"id_picture" : "https://pic.imgdb.cn/item/65828f53c458853aef67b3e1.png",
+		"CG" : [""],
+	},
+	"01001" :{
+		"name" : "纳撒尼尔·拜姆亚克",
+		"id_picture" : "",
+		"CG" : [""],
+	},
+	"07651" :{
+		"name" : "米夏·罗格",
+		"id_picture" : "",
+		"CG" : [""],
+	},
+	"04246" :{
+		"name" : "修泽亚·林顿",
+		"id_picture" : "",
+		"CG" : [""],
+	},
+	"04245" :{
+		"name" : "贝拉·林顿",
+		"id_picture" : "",
+		"CG" : [""],
+	},
+		"17351" :{
+		"name" : "赫林·默克尔",
+		"id_picture" : "",
+		"CG" : [""],
+	},
+	"26588" :{
+		"name" : "亚历克斯·罗森",
+		"id_picture" : "https://pic.imgdb.cn/item/65828f54c458853aef67b5e8.png",
+		"CG" : [""],
+	},
+	"33572" :{
+		"name" : "玛莎·金尼",
+		"id_picture" : "",
+		"CG" : [""],
+	},
+	"36221" :{
+		"name" : "尤菲利尔·艾特拉",
+		"id_picture" : "",
+		"CG" : [""],
+	},
+})
