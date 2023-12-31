@@ -73,28 +73,19 @@
         font-weight: bold;
     }
 
-.index_OC{
+.index_OC, .index_OC_p{
     position: relative;
     width: 15%; height: 30px;
     min-width: 90px;
 }
-    .index_OC:hover .index_OC_content {
+    .index_OC:hover .index_OC_content, .index_OC_p:hover .index_OC_content {
         display: block;
         opacity: 1;
         width: 360%;
         transition: all 0.5s;
     }
-
-.index_OC_p {
-    position: relative;
-    width: 15%; height: 30px;
-    min-width: 90px;
-}
     .index_OC_p:hover .index_OC_content {
-        display: block;
-        opacity: 1;
         width: 250%;
-        transition: all 0.5s;
     }
 
 /*OC定义*/

@@ -29,34 +29,17 @@ window.onload = function () {
     catch(err) {
         console.log("[Notice] 此页面没有Main组件")
     }
-    
 }
 
-/*
-// 加载完成后关闭加载界面
-window.onload = function () {
-    my$("loading").style.display = 'none';
-}
-*/
-
-/*
-// 主网站地址
-// var netAddr = 'http://www.ecityfict.com/'    // 服务器网址
-var netAddr = 'http://127.0.0.1:8000/'  // 本地测试网址
-*/
 
 var dataRelationship
 var dataGallery
+var dataDaydreams
 
 function getRelationship(data){ dataRelationship = data }
 function getImg(data){ dataGallery = data }
+function getDaydreams(data){ dataDaydreams = data }
 
-
-// 判断文件是否存在，向函数返回布尔值
-function checkOut(func, addr) {
-
-    return false
-}
 
 // 获取滚动条在Y轴上的滚动距离
 function getScrollTop() {
@@ -114,4 +97,41 @@ function checkAgent() {
     } else {
         return 'Phone';
     }
+}
+
+// 回滚到顶部
+var isScroll = false
+function myScrollTo( target, finished_time, interval_time ){
+    // 到顶部完成时间finished_time,每interval_time向上运动一次，1000=1s，目标位置为target
+    let scrollTop = getScrollTop()
+    isScroll = false
+
+    let timer = setInterval(() => {
+        scrollTop -= scrollTop / finished_time * interval_time
+        window.scrollTo(0, scrollTop)
+        if (scrollTop <= target || isScroll){
+            isScroll = false
+            clearInterval(timer)
+        }
+    }, interval_time)
+    for (let i = getScrollTop(); i >= 0; i--){
+        document.body.scrollTop = document.documentElement.scrollTop = i
+    }
+}
+window.addEventListener('wheel', (event) =>{ isScroll = true })
+window.addEventListener('touchstart', (event) =>{ isScroll = true })
+            
+
+// 给list增加原型方法remove
+Array.prototype.remove = function (str) {
+    let cont = 0
+    for (let i=0, n=0; i<this.length; i++){
+        if (this[i] != str){
+            this[n++] = this[i];
+        }else{
+            cont++;
+        }
+    }
+    this.length -= cont;
+    return this
 }

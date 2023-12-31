@@ -8,7 +8,7 @@
 }
 
 /*右侧显示详情的*/
-.relation_box{
+.relation_box, .relation_box_p{
     position: fixed;
     width: 35%; height: 500px;
     border-radius: 5px;
@@ -20,16 +20,10 @@
     box-shadow: 7px 7px 0 rgba(0,0,0,0.7);
 }
 .relation_box_p {
-    position: fixed;
     width: 90%; height: 40%;
-    border-radius: 5px;
     left: 5%; top: 60px;
-    z-index: 19;
-    background-color: #333333;
-    background-image: linear-gradient(#3f3f3f, #262626);
     display: none;
     opacity: 0.95;
-    box-shadow: 7px 7px 0 rgba(0,0,0,0.7);
 }
 
 /*自适应效果父级元素的滚动条隐藏*/

@@ -7,6 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{
 	ProjectSection(SolutionItems) = preProject
 		mSite\templates\404.html = mSite\templates\404.html
 		mSite\templates\500.html = mSite\templates\500.html
+		mSite\templates\daydreams.html = mSite\templates\daydreams.html
 		mSite\templates\pictorial.html = mSite\templates\pictorial.html
 		mSite\templates\relationship.html = mSite\templates\relationship.html
 	EndProjectSection
@@ -24,6 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "static", "static", "{DAAF71
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS", "CSS", "{374C706A-0ACC-406B-B882-D28AF9F0C498}"
 	ProjectSection(SolutionItems) = preProject
+		mSite\static\CSS\daydreams.css = mSite\static\CSS\daydreams.css
 		mSite\static\CSS\index.css = mSite\static\CSS\index.css
 		mSite\static\CSS\relationship.css = mSite\static\CSS\relationship.css
 		mSite\static\CSS\style.css = mSite\static\CSS\style.css
@@ -31,8 +33,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS", "CSS", "{374C706A-0AC
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JSON", "JSON", "{9F9F2D08-B3B5-4661-85CB-F294714658D7}"
 	ProjectSection(SolutionItems) = preProject
-		mSite\static\JS\gallery.json = mSite\static\JS\gallery.json
-		mSite\static\JS\relationship.json = mSite\static\JS\relationship.json
+		mSite\static\data\daydreams.json = mSite\static\data\daydreams.json
+		mSite\static\data\gallery.json = mSite\static\data\gallery.json
+		mSite\static\data\relationship.json = mSite\static\data\relationship.json
 	EndProjectSection
 EndProject
 Global

@@ -16,79 +16,12 @@
 
 <body>
 
-    <!--加载动画-->
-    <!--
-    <div id="loading">
-        <div id="load">
-            <span></span><span></span><span></span><span></span><span></span>
-        </div>
-        <div>Loading</div>
-        <div style="opacity: 0.4; margin-top: 20px;">首次加载可能需要花费数十秒</div>
-        <div style="opacity: 0.4;">如果等待时间太长，可以待会儿再回来看看ヽ(´•ω•`)､</div>
-    </div>
-    -->
-
-    <!--移动方块-->
-    <!--
-    <div class="square_area">
-        <div id="square"></div>
-    </div>
-    <script type="text/JavaScript">
-        let sqr = my$("square")
-        var isPC = true;
-        var isMove = false;
-
-        window.addEventListener('load', function () {
-            // 手机端访问，则隐藏旋转方块
-            if (window.screen.availWidth < 768 && sqr) {
-                sqr.style.display = "none";
-                isPC = false;
-            }
-        })
-
-        if (isPC && sqr) {
-            let event_x = 0; event_y = 0; x = 0; y = 0; count = 0; maxCount = 60;
-            window.addEventListener('mousemove', (ev) => {
-                event_x = ev.x - sqr.offsetLeft - sqr.clientWidth / 2;
-                event_y = ev.y - sqr.offsetTop - sqr.clientHeight / 2;
-                count = 0; maxCount = 60;
-                isMove = true;
-            })
-            window.addEventListener('mousedown', (ev) => {
-                count = 0; maxCount = 40;
-                isMove = false;
-            })
-            function draw() {
-                if (count < maxCount) {
-                    if (isMove) {
-                        x += event_x / maxCount;
-                        y += event_y / maxCount;
-                    }
-                    if (sqr.style.opacity < 0.9) {
-                        sqr.style.opacity = +(sqr.style.opacity) + 0.02;
-                    } else {
-                        sqr.style.opacity = 0.9;
-                    }
-                }
-                else if (sqr.style.opacity > 0) {
-                    sqr.style.opacity = +(sqr.style.opacity) - 0.02;
-                }
-                sqr.style.left = x + "px";
-                sqr.style.top = y + "px";
-                //console.log(+(sqr.style.opacity))
-                count++;
-            }
-            setInterval(draw, 1)
-        }
-    </script>
-        -->
-
     <!--抬头菜单栏-->
     <div class="banner">
         <img id="logo" class="banner_logo" src="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png" />
         <a href="mSite/templates/relationship.html"><div>关系网</div></a>
         <a href="mSite/templates/pictorial.html"><div>角色图鉴</div></a>
-            <div>人文地理</div>
+        <a href="mSite/templates/daydreams.html"><div>白日梦</div></a>
     </div><div id="line" class="banner_line"></div>
 
     <!--左下角虚构注意-->
@@ -186,24 +119,27 @@
 
     </div>
     <script type="text/javascript">
-        // 统一设置屏幕滚动视差、跟随滚动产生的动画效果
-        let mainHeight = my$('BG').clientHeight;
-        let scrollHeight = getScrollHeight();
-        let availHeight = getWindowHeight();
+
+        var mainHeight, scrollHeight, availHeight
+
+        $(document).ready(function(){
+            mainHeight = my$('BG').clientHeight;
+            my$('BG').style.top = '0px';
+            scrollHeight = getScrollHeight();
+            availHeight = getWindowHeight();
+        })
 
         window.addEventListener('scroll', function () {
             let scrollTop = getScrollTop();
             my$('logo').style.opacity = 0.9 - scrollTop / 100
             my$('line').style.opacity = scrollTop / 300 - 0.2
-
             let move = (scrollTop / (scrollHeight - availHeight)) * (mainHeight - availHeight);
-            // console.log('(' + scrollTop + '/(' + scrollHeight + '-' + availHeight +')) * ('+mainHeight +'-'+ availHeight+'))')
+            //console.log('(' + scrollTop + '/(' + scrollHeight + '-' + availHeight +')) * ('+mainHeight +'-'+ availHeight+'))')
             my$('BG').style.top = -move + 'px';
         })
     </script>
 
     <script>
-        console.log(checkAgent())
         if (checkAgent() == 'Phone') {
             my$("logo").className = "banner_logo_p";
             my$("indexOC").className = "index_OC_p";

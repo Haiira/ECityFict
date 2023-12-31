@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../static/images/logo.png">
+    <link rel="stylesheet" href="../static/CSS/daydreams.css">
+    <link rel="stylesheet" href="../static/CSS/style.css">
+
+    <title>白日梦 - 原木的OC世界观</title>
+
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/JavaScript" src="../static/JS/general.js"></script>
+
+    <script src="../static/data/daydreams.json?callback=getDaydreams"></script>
+
+</head>
+
+<body>
+    <a href="../../index.html">
+        <div class="cube backhome" style="background-color: var(--var-color-white)"></div>
+    </a>
+    <div class="banner">
+        <a href="relationship.html"><div>关系网</div></a>
+        <a href="pictorial.html"><div>角色图鉴</div></a>
+        <a href="javascript:location.reload()"><div>白日梦</div></a>
+    </div><div id="line" class="banner_line"></div>
+
+    <!--背景-->
+    <div id="BG">
+        <img class="BG_image" src="../static/images/BG.png" />
+    </div>
+
+    <div id="main">
+        <!--抬头栏-->
+        <div id="daydreamMenu" class="daydream_menu">
+            <div>
+                <input></input>
+            </div>
+            <div id="daydreamTags" class="daydream_tags"></div>
+            <div id="daydreamSortList"></div>
+        </div>
+        <div id="daydreamList" class="daydream_list"></div>
+        <div>
+            <div id="beforePage" class="daydream_button" style="visibility:hidden" onclick="changePage(-1)"><</div>
+            <div id="nextPage" class="daydream_button" onclick="changePage(1)">></div>
+        </div>
+    </div>
+
+    <script>
+        
+        var dataD, mainHeight, scrollHeight, availHeight, nextPage, beforePage;
+        var count = 0, _p = "";
+        var dataL=[], dataList=[], dataSelected=[], tagsList=[], tagList = [];
+
+        $(document).ready(function(){
+            dataD = dataDaydreams;
+            nextPage = my$("nextPage");
+            beforePage = my$("beforePage");
+            prepareNotes();
+
+            mainHeight = my$('BG').clientHeight;
+            my$('BG').style.top = '0px';
+            scrollHeight = getScrollHeight();
+            availHeight = getWindowHeight();
+
+            if (checkAgent() == 'Phone') {
+                let itemList = document.getElementsByClassName("daydream_item");
+                let listLength = itemList.length
+                for (let i=0; i<listLength; i++) {
+                    itemList[0].className = "daydream_item_p";
+                }
+                my$("daydreamList").className = "daydream_list_p";
+                my$("daydreamMenu").className = "daydream_menu_p";
+                _p = "_p";
+            }
+        })
+
+        function prepareNotes(){
+            for (let key in dataD) {
+                dataList.push(key);
+                dataD[key].tag.forEach(function(item){
+                    if (tagsList.indexOf(item)==-1){
+                        tagsList.push(item)
+                    }
+                })
+            }
+            tagsList.remove("")    // 去除空tag
+            dataSelected = dataList;
+            dataL = dataSelected.slice(0, 20);
+            changePage(0);
+            loadTags();
+        }
+        
+        function loadNotes(){
+
+            my$("daydreamList").innerHTML = "";  // 清空List
+            
+            for (let index in dataL){
+                if (!Array.prototype.hasOwnProperty.call(dataL, index)) break;
+                
+                let newDiv = document.createElement("div");
+                newDiv.className = "daydream_item" + _p;
+                newDiv.id = "daydreamItem_" + index
+
+                let newP = document.createElement("p");
+                newP.innerHTML = dataD[dataL[index]].content;
+                for (let i=0; i<tagList.length; i++){
+                    newP.innerHTML = newP.innerHTML.replace(tagList[i],`<b>${tagList[i]}</b>`);
+                }
+                
+                let newTime = document.createElement("div");
+                newTime.innerText = dataD[dataL[index]].time;
+                newTime.className = "daydream_time gray";
+
+                newDiv.append(newP);
+                newDiv.append(newTime);
+                newDiv = newDiv.outerHTML;
+                my$("daydreamList").innerHTML += newDiv;
+            }
+        }
+
+        function loadTags(){
+            for (let index in tagsList){
+                if (!Array.prototype.hasOwnProperty.call(dataL, index)) break;
+
+                let newDiv = document.createElement("div");
+                newDiv.innerText = tagsList[index];
+                newDiv.id = tagsList[index];
+                newDiv.className = "daydream_tag";
+                newDiv = newDiv.outerHTML;
+                my$("daydreamTags").innerHTML += newDiv;
+            }
+            document.querySelector("#daydreamTags").addEventListener("click", function(e){
+                let target = e.target || e.srcElement;  // Event.srcElement 是标准的 Event.target 属性的一个别名。它只对老版本的 IE 浏览器有效。
+                if (target && ((target.className=="daydream_tag") || (target.className=="daydream_tag_selected"))){
+                    selectData(true, target.id)
+                }
+            })
+        }
+
+        function changePage(page){
+            count = (page==0)? 0 : count + (20 * page);
+            dataL = dataSelected.slice(count, count+20);
+            loadNotes()
+            if (count+20 >= dataSelected.length){
+                nextPage.style.visibility = "hidden";
+            }else{
+                nextPage.style.visibility = "visible";
+            }
+            if (count-20 < 0){
+                beforePage.style.visibility = "hidden";
+            }else{
+                beforePage.style.visibility = "visible";
+            }
+            myScrollTo(0, 200, 10)
+        }
+
+        function selectData(isTag, str){
+            if (isTag){
+                if (!tagList.includes(str)){
+                    tagList.push(str);
+                    my$(str).className = "daydream_tag_selected"
+                }else{
+                    tagList.remove(str);
+                    my$(str).className = "daydream_tag"
+                    if (tagList.length == 0){
+                        dataSelected = dataList;
+                        dataL = dataSelected.slice(0, 20);
+                        changePage(0);
+                        return;
+                    }
+                }
+            }else { tagList = [str]; }
+            dataSelected = []
+            for (let key in dataD){
+                for (let i = 0; i < tagList.length; i++){
+                    if (dataD[key].tag.includes(tagList[i]) || dataD[key].content.indexOf(tagList[i]) != -1){
+                        dataSelected.push(key);
+                        break;
+                    }
+                }
+            }
+            console.log(tagList)
+            dataL = dataSelected.slice(0, 20);
+            changePage(0);
+        }
+
+    </script>
+
+    <!--视差-->
+    <script type="text/javascript">
+        // 统一设置屏幕滚动视差、跟随滚动产生的动画效果
+
+        window.addEventListener('scroll', function () {
+            let scrollTop = getScrollTop();
+            let move = (scrollTop / (scrollHeight - availHeight)) * (mainHeight - availHeight);
+            //console.log('(' + scrollTop + '/(' + scrollHeight + '-' + availHeight +')) * ('+mainHeight +'-'+ availHeight+'))')
+            my$('BG').style.top = -move + 'px';
+        })
+    </script>
+
+</body>
+</html>

@@ -10,11 +10,11 @@
 
 /*颜色*/
 :root {
-    --var-color-white: #d6d6d6; /* rgb(214, 214, 214) */
+    --var-color-white: #b5b5b5;
     --var-color-gray: #888888;
-    --var-color-blue: #7086ff; /* rgb(112, 134, 255) */
-    --var-color-lightblue: #b1c6ff; /* rgb(177, 198, 255) */
-    --var-color-darkblue: #000549; /* rgb(0, 5, 73) */
+    --var-color-blue: #7086ff;
+    --var-color-lightblue: #b1c6ff;
+    --var-color-darkblue: #000549;
 }
 
 /*========统一格式样式========*/
@@ -184,6 +184,9 @@ body::-webkit-scrollbar-track {
     }
 
 /*文字*/
+b {
+    color: var(--var-color-lightblue);
+}
 .blue {
     color: var(--var-color-lightblue);
     font-family: 'FZCuHeiSong';

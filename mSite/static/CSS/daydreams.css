@@ -1,0 +1,95 @@
+﻿@charset "UTF-8";
+
+.daydream_menu, .daydream_menu_p{
+	height: 150px;
+	margin: 20px; padding: 30px 40px;
+	background-color:rgba(0, 0, 0, 40%);
+	border-radius: 5px;
+}
+.daydream_menu_p{
+	margin: 20px 0; padding: 15px 20px;
+}
+
+
+.daydream_tags{
+	display: flex;
+	flex-direction: vertical;
+	margin-top: 20px;
+}
+
+.daydream_tag, .daydream_tag_selected{
+	min-width: 10px; height: 20px;
+	background-color: black;
+	border-radius: 20px;
+	border: 2px solid #888888;
+	margin: 0 5px 10px 0; padding: 3px 8px;
+	font-size: small;
+}
+	.daydream_tag:hover{
+		background-color: gray;
+		color: black;
+	}
+
+.daydream_tag_selected{
+	background-color: var(--var-color-darkblue);
+}
+
+
+.daydream_list{
+	width: 75%;
+	margin-left: 20px;
+}
+.daydream_list_p{
+	width: 100%;
+	margin: auto;
+}
+
+
+.daydream_item, .daydream_item_p{
+	display: flex;
+	flex-direction: column;
+	min-height: 50px;
+	margin: 0 0 20px 0; padding: 30px 40px;
+	background-color:rgba(0, 0, 0, 40%);
+	border-radius: 5px;
+}
+	.daydream_list p, .daydream_list_p p{
+		text-indent: 2em;	/*首行缩进*/
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 5;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		transition: all 0.8s;
+	}
+	.daydream_list p:hover, .daydream_list_p p:hover{
+		-webkit-line-clamp: 100;
+	}
+	.daydream_list span, .daydream_list_p span{
+		display: block;
+		text-indent: 2em;	/*首行缩进*/
+	}
+
+.daydream_item_p{
+	min-height: 40px;
+	margin: 0 0 10px 0; padding: 15px 20px;
+}
+	.daydream_list_p p{
+		text-indent: 1em;
+	}
+	.daydream_list_p span{
+		text-indent: 1em;
+	}
+
+
+.daydream_time{
+	margin: 10px 5px 0 0;
+	align-self: flex-end;
+}
+
+
+.daydream_button{
+	width: 30px; height: 30px;
+	background-color: black;
+	border-radius: 15px;
+}
