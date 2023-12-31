@@ -2,7 +2,7 @@
 
 .daydream_menu, .daydream_menu_p{
 	height: 150px;
-	margin: 20px; padding: 30px 40px;
+	margin: 20px 0; padding: 30px 40px;
 	background-color:rgba(0, 0, 0, 40%);
 	border-radius: 5px;
 }
@@ -19,7 +19,7 @@
 
 .daydream_tag, .daydream_tag_selected{
 	min-width: 10px; height: 20px;
-	background-color: black;
+	background-color: #222222;
 	border-radius: 20px;
 	border: 2px solid #888888;
 	margin: 0 5px 10px 0; padding: 3px 8px;
@@ -31,17 +31,26 @@
 	}
 
 .daydream_tag_selected{
-	background-color: var(--var-color-darkblue);
+	background-color: var(--var-color-lightblue);
+	color: #222222;
+	font-weight: bold;
 }
 
 
 .daydream_list{
 	width: 75%;
-	margin-left: 20px;
+	margin-left: 10px;
 }
 .daydream_list_p{
 	width: 100%;
 	margin: auto;
+}
+
+.daydream_sideList{
+	width: 20%;
+	display: flex;
+	flex-direction: raw;
+	padding-left: 30px;
 }
 
 
@@ -87,9 +96,31 @@
 	align-self: flex-end;
 }
 
+.daydream_buttons{
+	display:flex;
+	flex-direction: row-reverse;
+	height: 50px;
+	padding-right: 25%;
+}
 
-.daydream_button{
+.daydream_button, .daydream_button_top{
 	width: 30px; height: 30px;
+	margin: 10px; padding: auto;
 	background-color: black;
 	border-radius: 15px;
+	border: 2px solid #555555;
+	text-align: center;/*内容水平居中*/
+    line-height: 28px;/*内容垂直居中*/
+	font-size: large;
+	font-weight: bold;
+	opacity: 0.6;
+}
+	.daydream_button:hover, .daydream_button_top:hover{
+		background-color: gray;
+		color: black;
+		opacity: 0.8
+	}
+.daydream_button_top{
+	border: 2px solid #666666;
+	margin: 10px 5px;
 }

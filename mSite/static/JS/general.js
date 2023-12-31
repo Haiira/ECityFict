@@ -119,6 +119,7 @@ function myScrollTo( target, finished_time, interval_time ){
     }
 }
 window.addEventListener('wheel', (event) =>{ isScroll = true })
+window.addEventListener('mousedown', (event) =>{ isScroll = true })
 window.addEventListener('touchstart', (event) =>{ isScroll = true })
             
 

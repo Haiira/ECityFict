@@ -42,11 +42,20 @@
             <div id="daydreamTags" class="daydream_tags"></div>
             <div id="daydreamSortList"></div>
         </div>
-        <div id="daydreamList" class="daydream_list"></div>
-        <div>
-            <div id="beforePage" class="daydream_button" style="visibility:hidden" onclick="changePage(-1)"><</div>
-            <div id="nextPage" class="daydream_button" onclick="changePage(1)">></div>
+        <div style="display:flex; flex-direction: raw;">
+            <div id="daydreamList" class="daydream_list"></div>
+            <div class="daydream_sideList">
+                <div id="beforePage_top" class="daydream_button_top" onclick="changePage(-1)"><</div>
+                <div id="nextPage_top" class="daydream_button_top" onclick="changePage(1)">></div>
+            </div>
         </div>
+        <div class="daydream_buttons">
+            <div id="nextPage" class="daydream_button" onclick="changePage(1)">></div>
+            <div id="beforePage" class="daydream_button" onclick="changePage(-1)"><</div>
+        </div>
+
+        <!--页面底部占位空白-->
+        <div style="height:100px"></div>
     </div>
 
     <script>
@@ -58,7 +67,9 @@
         $(document).ready(function(){
             dataD = dataDaydreams;
             nextPage = my$("nextPage");
+            nextPage_top = my$("nextPage_top");
             beforePage = my$("beforePage");
+            beforePage_top = my$("beforePage_top");
             prepareNotes();
 
             mainHeight = my$('BG').clientHeight;
@@ -146,14 +157,18 @@
             dataL = dataSelected.slice(count, count+20);
             loadNotes()
             if (count+20 >= dataSelected.length){
-                nextPage.style.visibility = "hidden";
+                nextPage.style.display = "none";
+                nextPage_top.style.display = "none";
             }else{
-                nextPage.style.visibility = "visible";
+                nextPage.style.display = "block";
+                nextPage_top.style.display = "block";
             }
             if (count-20 < 0){
-                beforePage.style.visibility = "hidden";
+                beforePage.style.display = "none";
+                beforePage_top.style.display = "none";
             }else{
-                beforePage.style.visibility = "visible";
+                beforePage.style.display = "block";
+                beforePage_top.style.display = "block";
             }
             myScrollTo(0, 200, 10)
         }
