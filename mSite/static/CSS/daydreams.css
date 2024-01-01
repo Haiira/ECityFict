@@ -105,6 +105,7 @@
 .daydream_time{
 	margin: 10px 5px 0 0;
 	align-self: flex-end;
+	pointer-events: none;	/*忽略鼠标事件*/
 }
 
 .daydream_buttons, .daydream_buttons_p{
