@@ -161,7 +161,11 @@ body::-webkit-scrollbar-track {
 
 
 /*=======统一部件样式=======*/
-.line {
+.line{
+    background-color: rgba(200, 200, 200, 30%);
+    height: 2px;
+}
+.line_blue {
     background-image: linear-gradient(to right, aliceblue, #526fff);
     opacity: 0.6;
     height: 2px;
@@ -181,6 +185,23 @@ body::-webkit-scrollbar-track {
 }
     .backhome:hover {
         opacity: 1;
+    }
+.to_top{
+    position: fixed;
+    bottom: 20px; right: 3%;
+    width: 40px; height: 40px;
+    background-color: black;
+    border-radius: 5px;
+    font-size: 25px;
+    text-align: center;/*内容水平居中*/
+    line-height: 36px;/*内容垂直居中*/
+    border: 2px solid #555555;
+    opacity: 0.6;
+}
+    .to_top:hover {
+        background-color: gray;
+		color: black;
+		opacity: 0.8
     }
 
 /*文字*/

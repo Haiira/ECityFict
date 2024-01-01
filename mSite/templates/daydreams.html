@@ -42,17 +42,23 @@
             <div id="daydreamTags" class="daydream_tags"></div>
             <div id="daydreamSortList"></div>
         </div>
+
+        <div class="line" style="margin: 15px 30px;"></div>
+
         <div style="display:flex; flex-direction: raw;">
             <div id="daydreamList" class="daydream_list"></div>
-            <div class="daydream_sideList">
+            <div id="daydreamSideList" class="daydream_sideList">
                 <div id="beforePage_top" class="daydream_button_top" onclick="changePage(-1)"><</div>
                 <div id="nextPage_top" class="daydream_button_top" onclick="changePage(1)">></div>
             </div>
         </div>
-        <div class="daydream_buttons">
+        <div id="daydreamButtons" class="daydream_buttons">
             <div id="nextPage" class="daydream_button" onclick="changePage(1)">></div>
             <div id="beforePage" class="daydream_button" onclick="changePage(-1)"><</div>
         </div>
+
+        <!--跳转到顶部按钮-->
+        <div id="toTop" class="to_top" onclick="myScrollTo(0, 200, 10)">&#9650</div>
 
         <!--页面底部占位空白-->
         <div style="height:100px"></div>
@@ -85,8 +91,32 @@
                 }
                 my$("daydreamList").className = "daydream_list_p";
                 my$("daydreamMenu").className = "daydream_menu_p";
+                my$("daydreamButtons").className = "daydream_buttons_p";
+                my$("daydreamSideList").style.display = "none";
                 _p = "_p";
             }
+
+            // 注册卡片点击事件
+            document.querySelector("#daydreamList").addEventListener("click", function(e){
+                let target = e.target || e.srcElement;
+                e.stopPropagation()
+                console.log(target)
+                if (target && target.className == "daydream_item" + _p){
+                    target.className = "daydream_item_active" + _p
+                    console.log("change Active")
+                }else if (target && target.className == "daydream_item_active" + _p){
+                    target.className = "daydream_item" + _p
+                    console.log("change disActive")
+                }
+            })
+
+            // 注册Tag点击事件
+            document.querySelector("#daydreamTags").addEventListener("click", function(e){
+                let target = e.target || e.srcElement;  // Event.srcElement 是标准的 Event.target 属性的一个别名。它只对老版本的 IE 浏览器有效。
+                if (target && ((target.className=="daydream_tag") || (target.className=="daydream_tag_selected"))){
+                    selectData(true, target.id)
+                }
+            })
         })
 
         function prepareNotes(){
@@ -144,12 +174,6 @@
                 newDiv = newDiv.outerHTML;
                 my$("daydreamTags").innerHTML += newDiv;
             }
-            document.querySelector("#daydreamTags").addEventListener("click", function(e){
-                let target = e.target || e.srcElement;  // Event.srcElement 是标准的 Event.target 属性的一个别名。它只对老版本的 IE 浏览器有效。
-                if (target && ((target.className=="daydream_tag") || (target.className=="daydream_tag_selected"))){
-                    selectData(true, target.id)
-                }
-            })
         }
 
         function changePage(page){
@@ -211,6 +235,8 @@
 
         window.addEventListener('scroll', function () {
             let scrollTop = getScrollTop();
+            my$('line').style.opacity = scrollTop / 800 - 0.2
+            my$('toTop').style.opacity = scrollTop / 400 - 0.2
             let move = (scrollTop / (scrollHeight - availHeight)) * (mainHeight - availHeight);
             //console.log('(' + scrollTop + '/(' + scrollHeight + '-' + availHeight +')) * ('+mainHeight +'-'+ availHeight+'))')
             my$('BG').style.top = -move + 'px';

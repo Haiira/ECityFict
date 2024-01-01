@@ -2,7 +2,7 @@
 
 .daydream_menu, .daydream_menu_p{
 	height: 150px;
-	margin: 20px 0; padding: 30px 40px;
+	margin: 20px 0 10px 0; padding: 30px 40px;
 	background-color:rgba(0, 0, 0, 40%);
 	border-radius: 5px;
 }
@@ -14,6 +14,7 @@
 .daydream_tags{
 	display: flex;
 	flex-direction: vertical;
+	flex-wrap: wrap;
 	margin-top: 20px;
 }
 
@@ -54,7 +55,7 @@
 }
 
 
-.daydream_item, .daydream_item_p{
+.daydream_item, .daydream_item_p, .daydream_item_active, .daydream_item_active_p{
 	display: flex;
 	flex-direction: column;
 	min-height: 50px;
@@ -62,7 +63,7 @@
 	background-color:rgba(0, 0, 0, 40%);
 	border-radius: 5px;
 }
-	.daydream_list p, .daydream_list_p p{
+	.daydream_list p, .daydream_list_p p, .daydream_item_active p, .daydream_item_active_p p{
 		text-indent: 2em;	/*首行缩进*/
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
@@ -70,24 +71,34 @@
 		overflow: hidden;
 		text-overflow: ellipsis;
 		transition: all 0.8s;
+		pointer-events: none;	/*忽略鼠标事件*/
 	}
-	.daydream_list p:hover, .daydream_list_p p:hover{
+	.daydream_list div:hover p, .daydream_list_p div:hover p, .daydream_item_active div:hover p, .daydream_item_active_p div:hover p{
 		-webkit-line-clamp: 100;
 	}
-	.daydream_list span, .daydream_list_p span{
+	.daydream_list span, .daydream_list_p span, .daydream_item_active span, .daydream_item_active_p span{
 		display: block;
 		text-indent: 2em;	/*首行缩进*/
+		pointer-events: none;	/*忽略鼠标事件*/
 	}
 
-.daydream_item_p{
+.daydream_item_p, .daydream_item_active_p{
 	min-height: 40px;
 	margin: 0 0 10px 0; padding: 15px 20px;
 }
-	.daydream_list_p p{
+	.daydream_list_p p, .daydream_item_active_p p{
 		text-indent: 1em;
 	}
-	.daydream_list_p span{
+	.daydream_list_p span, .daydream_item_active_p span{
 		text-indent: 1em;
+	}
+
+.daydream_item_active, .daydream_item_active_p{
+	background-color:rgba(0, 0, 0, 60%);
+	outline: 1px solid #333333;	/*outline不占用空间*/
+}
+	.daydream_item_active p, .daydream_item_active_p p{
+		-webkit-line-clamp: 100;
 	}
 
 
@@ -96,16 +107,19 @@
 	align-self: flex-end;
 }
 
-.daydream_buttons{
+.daydream_buttons, .daydream_buttons_p{
 	display:flex;
 	flex-direction: row-reverse;
 	height: 50px;
 	padding-right: 25%;
 }
+.daydream_buttons_p{
+	padding-right: 10px;
+}
 
 .daydream_button, .daydream_button_top{
 	width: 30px; height: 30px;
-	margin: 10px; padding: auto;
+	margin: 10px;
 	background-color: black;
 	border-radius: 15px;
 	border: 2px solid #555555;
@@ -118,7 +132,7 @@
 	.daydream_button:hover, .daydream_button_top:hover{
 		background-color: gray;
 		color: black;
-		opacity: 0.8
+		opacity: 0.8;
 	}
 .daydream_button_top{
 	border: 2px solid #666666;

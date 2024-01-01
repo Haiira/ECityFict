@@ -20,15 +20,7 @@ $(document).ready(function () {
 })
 
 window.onload = function () {
-    let mainMinHeight = getWindowHeight()  - 50 + "px"
-    let mainHeight = getScrollHeight() - 50 + "px"
-    try {
-        my$("main").style.minHeight = mainMinHeight;
-        my$("main").style.height = mainHeight;
-    }
-    catch(err) {
-        console.log("[Notice] 此页面没有Main组件")
-    }
+    //setMainHeight()
 }
 
 
@@ -40,6 +32,19 @@ function getRelationship(data){ dataRelationship = data }
 function getImg(data){ dataGallery = data }
 function getDaydreams(data){ dataDaydreams = data }
 
+
+// 设置Main组件高度
+function setMainHeight(){
+    let mainMinHeight = getWindowHeight()  - 50 + "px"
+    let mainHeight = getClientHeight() - 50 + "px"
+    try {
+        my$("main").style.minHeight = mainMinHeight;
+        my$("main").style.height = mainHeight;
+    }
+    catch(err) {
+        console.log("[Notice] 此页面没有Main组件")
+    }
+}
 
 // 获取滚动条在Y轴上的滚动距离
 function getScrollTop() {
@@ -54,7 +59,7 @@ function getScrollTop() {
     return scrollTop;
 }
 
-// 获取文档的总高度
+// 获取文档的总高度（包含溢出隐藏）
 function getScrollHeight() {
     var scrollHeight = 0, bodyScrollHeight = 0, documentScrollHeight = 0;
     if (document.body) {
@@ -65,6 +70,19 @@ function getScrollHeight() {
     }
     scrollHeight = (bSH - dSH > 0) ? bSH : dSH;
     return scrollHeight;
+}
+
+// 获取文档的总高度（不包含溢出隐藏）
+function getClientHeight() {
+    var clientHeight = 0, bodyClientHeight = 0, documentClientHeight = 0;
+    if (document.body) {
+        bSH = document.body.clientHeight;
+    }
+    if (document.documentElement) {
+        dSH = document.documentElement.clientHeight;
+    }
+    clientHeight = (bSH - dSH > 0) ? bSH : dSH;
+    return clientHeight;
 }
 
 //获取浏览器视口的高度
