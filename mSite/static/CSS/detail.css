@@ -1,0 +1,28 @@
+﻿@charset "UTF-8";
+
+.detail_content, .detail_content_p{
+	width: 70%;
+	margin: 100px 0 0 50px;
+}
+	.detail_content, .detail_content_p h1,h2,h3{
+		font-family: 'FZCuHeiSong';
+	}
+
+	.detail_content, .detail_content_p h1{
+		margin: 0 0 20px 0;
+	}
+	.detail_content, .detail_content_p h2{
+		text-align: center; 
+	}
+	.detail_content, .detail_content_p p{
+		text-indent: 2em;
+		margin-bottom: 5px;
+	}
+
+.detail_content_p{
+	width: 100%;
+	margin: 100px 0 0 15px;
+}
+	.detail_content_p p{
+		text-indent: 1em;
+	}

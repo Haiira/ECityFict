@@ -5,9 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Templates", "Templates", "{A05CE371-C282-4396-8A32-5FB4CB9F74AB}"
 	ProjectSection(SolutionItems) = preProject
-		mSite\templates\404.html = mSite\templates\404.html
-		mSite\templates\500.html = mSite\templates\500.html
 		mSite\templates\daydreams.html = mSite\templates\daydreams.html
+		mSite\templates\detail.html = mSite\templates\detail.html
 		mSite\templates\pictorial.html = mSite\templates\pictorial.html
 		mSite\templates\relationship.html = mSite\templates\relationship.html
 	EndProjectSection
@@ -26,6 +25,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CSS", "CSS", "{374C706A-0ACC-406B-B882-D28AF9F0C498}"
 	ProjectSection(SolutionItems) = preProject
 		mSite\static\CSS\daydreams.css = mSite\static\CSS\daydreams.css
+		mSite\static\CSS\detail.css = mSite\static\CSS\detail.css
 		mSite\static\CSS\index.css = mSite\static\CSS\index.css
 		mSite\static\CSS\relationship.css = mSite\static\CSS\relationship.css
 		mSite\static\CSS\style.css = mSite\static\CSS\style.css

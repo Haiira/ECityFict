@@ -24,19 +24,18 @@ window.onload = function () {
 }
 
 
-var dataRelationship
-var dataGallery
-var dataDaydreams
+var dataRelationship, dataGallery, dataDaydreams, dataCharacterM
 
 function getRelationship(data){ dataRelationship = data }
 function getImg(data){ dataGallery = data }
 function getDaydreams(data){ dataDaydreams = data }
+function getMarkdownForCharacter(data){ dataCharacterM = data }
 
 
 // 设置Main组件高度
-function setMainHeight(){
-    let mainMinHeight = getWindowHeight()  - 50 + "px"
-    let mainHeight = getClientHeight() - 50 + "px"
+function setMainHeight( minus=0 ){
+    let mainMinHeight = getWindowHeight()  - 50 - minus + "px"
+    let mainHeight = getClientHeight() - 50 - minus + "px"
     try {
         my$("main").style.minHeight = mainMinHeight;
         my$("main").style.height = mainHeight;

@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="../static/images/logo.png" />
+    <link rel="shortcut icon" href="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png" />
     <link rel="stylesheet" href="../static/CSS/style.css" />
     <link rel="stylesheet" href="../static/CSS/relationship.css" />
 
@@ -22,7 +22,7 @@
 
     <!--抬头菜单栏-->
     <a href="../../index.html">
-        <div class="cube backhome" style="background-color: var(--var-color-white)"></div>
+        <div class="cubeBackhome" style="background-color: var(--var-color-white)"></div>
     </a>
     <div class="banner">
         <a href="javascript:location.reload()"><div>关系网</div></a>
@@ -57,6 +57,7 @@
                     <p id="r_brief_2">N/A</p>
                 </div>
         </div>
+        <a id="relationBoxHref" href=''>详情></a>
         </div>
         <!--关闭按钮（移动端）-->
         <div id="r_close" class="relation_close" onClick="closeRelation()">
@@ -381,6 +382,7 @@
                     }
                 })
                 .style("stroke-width", "2px")
+                .style("cursor", "pointer")
                 .attr("r", function (d) {
                     return d.radius;
                 })
@@ -446,6 +448,7 @@
                     }
                 })
                 .style("font-family", nodesFontType)
+                .style("pointer-events", "none")
                 .attr('x', function (d) {
                     var name = d.name;
                     //如果小于等于四个字符，不换行
@@ -739,7 +742,9 @@
                 if (key == id) {
                     let item = dataC[key]
                     my$("r_name").innerText = item.name  // 姓名
+                    my$("relationBoxHref").href = 'detail.html?id=' + key
 
+                    // 调整格式
                     my$("relationBox").style.display = "block"
 
                     // 目标是人

@@ -27,6 +27,7 @@
 a {
     text-decoration: none;
     color: aliceblue;
+    cursor: pointer;
 }
     a:hover, a:visited, a:link, a:active {
         color: var(--var-color-white);
@@ -170,20 +171,20 @@ body::-webkit-scrollbar-track {
     opacity: 0.6;
     height: 2px;
 }
-.cube {
+.cube, .cubeBackhome{
     background-color: var(--var-color-darkblue);
     width: 20px; height: 20px;
     transform: rotate(45deg);
     margin: 10px;
 }
-.backhome{
+.cubeBackhome{
     position: fixed;
     top: 5px; left: 1%;
     z-index: 25;
     opacity: 0.6;
     cursor: pointer;
 }
-    .backhome:hover {
+    .cubeBackhome:hover {
         opacity: 1;
     }
 .to_top{

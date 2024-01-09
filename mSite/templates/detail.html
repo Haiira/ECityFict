@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png"/>
+    <link rel="stylesheet" href="../static/CSS/detail.css"/>
+    <link rel="stylesheet" href="../static/CSS/style.css"/>
+
+    <title>详情 - 原木的OC世界观</title>
+
+    <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.bootcdn.net/ajax/libs/showdown/2.1.0/showdown.min.js"></script>
+    <script type="text/JavaScript" src="../static/JS/general.js"></script>
+
+    <script src="../static/data/Markdown/CharacterCollection.json?callback=getMarkdownForCharacter"></script>
+
+<body>
+
+    <!--抬头菜单栏-->
+    <div class="banner">
+        <a href="../../index.html">
+            <img id="logo" class="banner_logo" style="cursor:pointer;" src="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png" />
+        </a>
+        <a href="relationship.html"><div>关系网</div></a>
+        <a href="pictorial.html"><div>角色图鉴</div></a>
+        <a href="daydreams.html"><div>白日梦</div></a>
+    </div><div id="line" class="banner_line"></div>
+
+    <!--左下角虚构注意-->
+    <div id="notice" class="notice">
+        本世界观完全架空，当中提及的一切人物、团体、事件等纯属虚构，如有雷同纯属巧合。
+    </div>
+
+    </script>
+
+    <!--背景-->
+    <div id="BG">
+        <img class="BG_image" src="https://pic.imgdb.cn/item/65818391c458853aef546b5a.png" alt="BG.png">
+    </div>
+
+    <div id="main">
+
+        <div id="detailContent" class="center detail_content">
+            <div>
+                <div>定向失败！这个条目还没有完成……QuQ</div>
+            </div>
+        </div>
+
+        <!--页面底部占位空白-->
+        <div style="height:100px"></div>
+
+    </div>
+    <script type="text/javascript">
+
+        var mainHeight, scrollHeight, availHeight
+
+
+        $(document).ready(function(){
+            dataC = dataCharacterM;
+            mainHeight = my$('BG').clientHeight;
+            my$('BG').style.top = '0px';
+
+            let url = new URL(window.location.href);
+            let id = url.searchParams.get('id')
+            showMarkdown(id)
+
+            scrollHeight = getScrollHeight();
+            availHeight = getWindowHeight();
+        })
+
+        function showMarkdown(id){
+            if(id && dataC[id]){
+                let converter = new showdown.Converter();
+                my$("detailContent").innerHTML = 
+                    converter.makeHtml(dataC[id])
+                my$("detailContent").classList.remove('center')
+            }else{
+                my$("detailContent").classList.remove('detail_content')
+                setMainHeight( minus=100 )
+            }
+        }
+
+        window.addEventListener('scroll', function () {
+            let scrollTop = getScrollTop();
+            let move = (scrollTop / (scrollHeight - availHeight)) * (mainHeight - availHeight);
+            my$('logo').style.opacity = 0.9 - scrollTop / 100
+            my$('line').style.opacity = scrollTop / 300 - 0.2
+            //console.log('(' + scrollTop + '/(' + scrollHeight + '-' + availHeight +')) * ('+mainHeight +'-'+ availHeight+'))')
+            my$('BG').style.top = -move + 'px';
+        })
+    </script>
+
+    <script>
+        if (checkAgent() == 'Phone') {
+            my$("logo").className = "banner_logo_p";
+            my$("detailContent").className = "detail_content_p";
+        }
+    </script>
+
+</body>
+</html>

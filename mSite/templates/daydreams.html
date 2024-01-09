@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="shortcut icon" href="../static/images/logo.png">
+    <link rel="shortcut icon" href="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png">
     <link rel="stylesheet" href="../static/CSS/daydreams.css">
     <link rel="stylesheet" href="../static/CSS/style.css">
 
@@ -20,7 +20,7 @@
 
 <body>
     <a href="../../index.html">
-        <div class="cube backhome" style="background-color: var(--var-color-white)"></div>
+        <div class="cubeBackhome" style="background-color: var(--var-color-white)" ></div>
     </a>
     <div class="banner">
         <a href="relationship.html"><div>关系网</div></a>
@@ -37,7 +37,7 @@
         <!--抬头栏-->
         <div id="daydreamMenu" class="daydream_menu">
             <div>
-                <input></input>
+                <input type="text" id="inputSearch" maxlength="8" size="10" placeholder="搜索关键字"></input>
             </div>
             <div id="daydreamTags" class="daydream_tags"></div>
             <div id="daydreamSortList"></div>
@@ -103,10 +103,8 @@
                 console.log(target)
                 if (target && target.className == "daydream_item" + _p){
                     target.className = "daydream_item_active" + _p
-                    console.log("change Active")
                 }else if (target && target.className == "daydream_item_active" + _p){
                     target.className = "daydream_item" + _p
-                    console.log("change disActive")
                 }
             })
 
