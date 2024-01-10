@@ -29,109 +29,109 @@ strong{
 	font-size: 0.5em;
 }
 
+h1, h2, h3, h4 {
+	font-family: 'FZCuHeiSong';
+	color: var(--var-color-lightgrayblue)
+}
+h1 {
+	width: fit-content;
+	position: relative;
+	margin: 0 0 20px 0;
+	text-shadow: 2px 2px 4px black;
+	letter-spacing: -1px;	/*字间距*/
+	font-size: 3em;
+}
+h1::before, h1::after{
+	content: "";
+	position: absolute;
+	width: 10px; height:40px;
+	border-width: 10px;
+}
+h1::before{
+	left: -28px; top: -10px;
+	border-style: solid none none solid;
+	border-top-width: 5px;
+	box-shadow:inset 2px 2px 4px black;
+}
+h1::after{
+	right: -30px; bottom: -10px;
+	border-style: none solid solid none;
+	border-bottom-width: 5px;
+	box-shadow: 2px 2px 4px black;
+}
+h2 {
+	margin: 20px 0 30px 0;
+	padding: 10px;
+	border-style: none double none double;
+	border-color: var(--var-color-white);
+	background: linear-gradient(to right, rgba(0,0,0,40%), rgba(0,0,0,10%), rgba(0,0,0,40%));
+	text-align: center; 
+	text-shadow: 1px 1px 3px black;
+}
+h2::before{ opacity:60%; content:'- ' }
+h2::after{ opacity:60%; content:' -' }
+h3 {
+	margin: 5px 0;
+	padding: 5px;
+	border-left: double var(--var-color-white);
+	padding-left: 15px;
+	background: linear-gradient(to right, rgba(0,0,0,40%), rgba(0,0,0,0) 30%);
+	text-shadow: 1px 1px 2px rgba(0,0,0,80%);
+}
+h4 {
+	margin-left: 5px;
+	padding: 5px 0 2px 0;
+	width: 30%;
+	border-bottom: 1px solid gray;
+	font-weight: normal;
+	font-size: 1.1em;
+	background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,40%));
+}
+h4::before{content:'·'}
+p {
+	margin-left: 10px;
+	text-indent: 2em;
+	margin-bottom: 0.5em;
+}
+
 .detail_content, .detail_content_p{
 	width: 70%;
 	margin: 100px 0 0 50px;
 	position: relative;
-
-	h1, h2, h3, h4 {
-		font-family: 'FZCuHeiSong';
-		color: var(--var-color-lightgrayblue)
-	}
-	h1 {
-		width: fit-content;
-		position: relative;
-		margin: 0 0 20px 0;
-		text-shadow: 2px 2px 4px black;
-		letter-spacing: -1px;	/*字间距*/
-		font-size: 3em;
-	}
-	h1::before, h1::after{
-		content: "";
-		position: absolute;
-		width: 10px; height:40px;
-		border-width: 10px;
-	}
-	h1::before{
-		left: -28px; top: -10px;
-		border-style: solid none none solid;
-		border-top-width: 5px;
-		box-shadow:inset 2px 2px 4px black;
-	}
-	h1::after{
-		right: -30px; bottom: -10px;
-		border-style: none solid solid none;
-		border-bottom-width: 5px;
-		box-shadow: 2px 2px 4px black;
-	}
-	h2 {
-		margin: 20px 0 30px 0;
-		padding: 10px;
-		border-style: none double none double;
-		border-color: var(--var-color-white);
-		background: linear-gradient(to right, rgba(0,0,0,40%), rgba(0,0,0,10%), rgba(0,0,0,40%));
-		text-align: center; 
-		text-shadow: 1px 1px 3px black;
-	}
-	h2::before{ opacity:60%; content:'- ' }
-	h2::after{ opacity:60%; content:' -' }
-	h3 {
-		margin: 5px 0;
-		padding: 5px;
-		border-left: double var(--var-color-white);
-		padding-left: 15px;
-		background: linear-gradient(to right, rgba(0,0,0,40%), rgba(0,0,0,0) 30%);
-		text-shadow: 1px 1px 2px rgba(0,0,0,80%);
-	}
-	h4 {
-		margin-left: 5px;
-		padding: 5px 0 2px 0;
-		width: 30%;
-		border-bottom: 1px solid gray;
-		font-weight: normal;
-		font-size: 1.1em;
-		background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,40%));
-	}
-	h4::before{content:'·'}
-	p {
-		margin-left: 10px;
-		text-indent: 2em;
-		margin-bottom: 0.5em;
-	}
 }
 
 .detail_content_p{
 	width: 100%;
 	margin: 100px 0 0 15px;
-
-	p {
+}
+	.detail_content_p p {
 		text-indent: 1em;
 	}
-	h1 {
+	.detail_content_p h1 {
 		font-size: 2.6em;
 	}
-	h1::before, h1::after{
+	.detail_content_p h1::before, .detail_content_p h1::after{
 		width: 5px; height: 20px;
 		border-width: 8px;
 	}
-	h1::before{
+	.detail_content_p h1::before{
 		left: -20px; top: -8px;
 		border-top-width: 5px;
 	}
-	h1::after{
+	.detail_content_p h1::after{
 		right: -20px; bottom: -8px;
 		border-bottom-width: 5px;
 	}
-	h2 {
+	.detail_content_p h2 {
 		margin: 15px 0 20px 0;
 	}
-	h3 {
+	.detail_content_p h3 {
 		background: linear-gradient(to right, rgba(0,0,0,40%), rgba(0,0,0,0) 45%);
 	}
-	#id{
+	.detail_content_p #id{
 		left: 20px;
 	}
-	#nameEN{
+	.detail_content_p #nameEN{
 		left: 50px;
 		font-size: 2.5em;
 	}
