@@ -69,14 +69,12 @@
     <script src="https://cdn.bootcdn.net/ajax/libs/d3/3.5.17/d3.min.js" charset="utf-8"></script>
     <script>
 
-        var dataL
-        var dataC
-        var dataG
+        var dataL,  dataC, dataG
 
         $(document).ready(function () {
-            dataL = dataRelationship.links
-            dataC = dataRelationship.characters
-            dataG = dataGallery
+            dataL = dataRelationship.links;
+            dataC = dataRelationship.characters;
+            dataG = dataGallery;
             showChart()
         })
 
@@ -370,13 +368,15 @@
                 .enter()
                 .append("circle")
                 .style("stroke", function (d) {
-                    switch (d.color) {
+                    switch (d.color) {  // 节点外边框颜色
                         case "#b195fe":  // 紫色
                             return "#b195fe"
                         case "#9b95fe":  // 蓝色
                             return "#9b95fe"
                         case "#c3b68b":  // 黄色
                             return "#c3b68b"
+                        case "#9a9a9a":  // 灰色
+                            return "#9a9a9a"
                         default:
                             return "#a6a6a6"
                     }
@@ -442,6 +442,7 @@
                         case "#b195fe":  // 紫色
                         case "#9b95fe":  // 蓝色
                         case "#c3b68b":  // 黄色
+                        case "#9a9a9a":  // 灰色
                             return "#000000"
                         default:
                             return "#d8d8d8"

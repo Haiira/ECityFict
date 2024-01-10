@@ -16,6 +16,7 @@
     <script type="text/JavaScript" src="../static/JS/general.js"></script>
 
     <script src="../static/data/Markdown/CharacterCollection.json?callback=getMarkdownForCharacter"></script>
+    <script src="../static/data/gallery.json?callback=getImg"></script>
 
 <body>
 
@@ -55,11 +56,14 @@
     </div>
     <script type="text/javascript">
 
+        var dataC, dataG
         var mainHeight, scrollHeight, availHeight
 
 
         $(document).ready(function(){
             dataC = dataCharacterM;
+            dataG = dataGallery;
+
             mainHeight = my$('BG').clientHeight;
             my$('BG').style.top = '0px';
 
@@ -74,9 +78,13 @@
         function showMarkdown(id){
             if(id && dataC[id]){
                 let converter = new showdown.Converter();
-                my$("detailContent").innerHTML = 
-                    converter.makeHtml(dataC[id])
-                my$("detailContent").classList.remove('center')
+                my$("detailContent").innerHTML = converter.makeHtml(dataC[id]);
+                my$("detailContent").classList.remove('center');
+                try{
+                    my$("headImg").src = dataG[id].id_picture;
+                    my$("headImg").className = "detail_headIMG";
+                    my$("id").parentNode.style.position = "relative";
+                }catch(err){}
             }else{
                 my$("detailContent").classList.remove('detail_content')
                 setMainHeight( minus=100 )

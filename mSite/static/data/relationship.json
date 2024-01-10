@@ -260,13 +260,26 @@ getRelationship({
 		"sourceRadius" : 30,
 		"targetRadius" : 30,
 		},
+		{
+		"sID" : "49652",
+		"tID" : "09653",
+		"source" : "尤伯亚",
+		"target" : "萨缪尔",
+		"relation" : "",
+		"sourceImg": "",
+		"targetImg": "",
+		"sourceColor" : "#9a9a9a",
+		"targetColor" : "",
+		"sourceRadius" : 30,
+		"targetRadius" : 30,
+		},
 	],
     "characters" : {
         "0" : {
 			"name" : "德科尔事务所",
 			"gender" : "",
 			"age" : "",
-			"brief" : "DhesCrop Security&总部位于安德罗萨城中心，半官方性质武装组织。<br>以委托受理形式维护城内治安。&主任“纳撒尼尔·拜姆亚克”同时也是安德罗萨的政治代表之一，因此德科尔事务所的决定与行动同样具有一定意义上的官方效力。啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊。"
+			"brief" : "DhesCrop Security&总部位于安德罗萨城中心，半官方性质武装组织。<br>以委托受理形式维护城内治安。&主任“纳撒尼尔·拜姆亚克”同时也是安德罗萨的政治代表之一，因此德科尔事务所的决定与行动同样具有一定意义上的官方效力。"
 		},
 		"1" : {
 			"name" : "虚像长廊",
@@ -322,11 +335,11 @@ getRelationship({
 			"brief" : "Herrin Markle&宗教组织“虚像长廊”主教。&"
 		},
 		"07651" :{
-			"name" : "米夏·罗格",
+			"name" : "米夏·格罗",
 			"gender" : "F",
 			"age" : "32",
 			"faction" : "德科尔事务所",
-			"brief" : "Myssa Roge&德科尔事务所在职员工，情报组成员。&"
+			"brief" : "Myssa Groge&德科尔事务所在职员工，情报组成员。&"
 		},
 		"04246" :{
 			"name" : "修则亚·林顿",
@@ -363,5 +376,12 @@ getRelationship({
 			"faction" : "阿卡斯托亚克公国",
 			"brief" : "Eufellya Etra&阿卡斯托亚克公国王家卫队队长。&"
 		},
+		"49652" :{
+			"name" : "尤伯亚·布伦特",
+			"gender" : "M",
+			"age" : "43",
+			"faction" : "安德罗萨",
+			"brief" : "Yuboa Blunt&安德罗萨居民。&"
+		}
     },
 })

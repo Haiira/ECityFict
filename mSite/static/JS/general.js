@@ -112,6 +112,12 @@ function checkAgent() {
     } else if (bIsIpad) {
         return 'Pad';
     } else {
+        try {
+            my$("main").style.fontSize = "smaller";
+            }
+        catch(err) {
+            console.log("[Notice] 此页面没有Main组件")
+        }
         return 'Phone';
     }
 }
