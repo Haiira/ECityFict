@@ -102,13 +102,13 @@ p {
 
 .detail_content_p{
 	width: 100%;
-	margin: 100px 0 0 15px;
+	margin: 80px 0 0 0;
 }
 	.detail_content_p p {
 		text-indent: 1em;
 	}
 	.detail_content_p h1 {
-		left: -5px;
+		margin: 0 0 15px 0;
 		font-size: 2.3em;
 	}
 	.detail_content_p h1::before, .detail_content_p h1::after{
@@ -133,7 +133,7 @@ p {
 		width: 40%;
 	}
 	.detail_content_p #id{
-		left: 20px;
+		left: 15px;
 	}
 	.detail_content_p #nameEN{
 		left: 40px;
@@ -142,6 +142,12 @@ p {
 	}
 	.detail_content_p .detail_headIMG{
 		height: 230px;
+		position: relative;
+		left: -5px;
+	}
+	.detail_content_p #logo{
+		width: 15%;
+		max-width: 70px; max-height: 70px;
 	}
 
 .detail_headIMG{

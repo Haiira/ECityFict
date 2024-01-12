@@ -30,6 +30,11 @@
         <a href="daydreams.html"><div>白日梦</div></a>
     </div>
 
+    <!--左下角虚构注意-->
+    <div id="notice" class="notice">
+        本世界观完全架空，当中提及的一切人物、团体、事件等纯属虚构。
+    </div>
+
     <!--画布-->
     <div id="divid"></div>
 
@@ -57,7 +62,10 @@
                     <p id="r_brief_2">N/A</p>
                 </div>
         </div>
-        <a id="relationBoxHref" href=''>详情></a>
+        <!--详情按钮-->
+        <a id="relationBoxHref" href=''>
+            <div>详情 ></div>
+        </a>
         </div>
         <!--关闭按钮（移动端）-->
         <div id="r_close" class="relation_close" onClick="closeRelation()">
@@ -734,9 +742,10 @@
                         
         // 鼠标点击改变简介
         function changeBox(id) {
-            my$("relationBoxInner").style.height = $("#relationBox").height()-65 + "px"
-            my$("relationBoxInner").style.overflow = "auto"
+            my$("relationBoxInner").style.height = $("#relationBox").height()-65 + "px";
+            my$("relationBoxInner").style.overflow = "auto";
             my$('relationBox').style.opacity = 0.95;
+            my$("relationBoxHref").style.display = "block";
             for (let key in dataC) {
 
                 // 开始赋值

@@ -26,6 +26,24 @@
     opacity: 0.95;
 }
 
+#relationBoxHref{
+    display: none;
+}
+#relationBoxHref div{
+    position: absolute;
+    right: 8px; bottom: 5px;
+    width: fit-content;
+    padding: 5px 10px 5px 15px;
+    background: rgba(0, 0, 0, 80%);
+    border: 1.5px solid gray;
+    border-radius: 20px;
+    opacity: 50%;
+}
+#relationBoxHref:hover div {
+    cursor: pointer;
+    opacity: 80%;
+}
+
 /*自适应效果父级元素的滚动条隐藏*/
 .relation_box_inner{
     margin-top: 25px;

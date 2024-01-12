@@ -144,7 +144,7 @@ function myScrollTo( target, finished_time, interval_time ){
 window.addEventListener('wheel', (event) =>{ isScroll = true })
 window.addEventListener('mousedown', (event) =>{ isScroll = true })
 window.addEventListener('touchstart', (event) =>{ isScroll = true })
-            
+           
 
 // 给list增加原型方法remove
 Array.prototype.remove = function (str) {
