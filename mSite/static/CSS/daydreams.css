@@ -55,29 +55,34 @@
 }
 
 
-.daydream_item, .daydream_item_p, .daydream_item_active, .daydream_item_active_p{
+.daydream_item, .daydream_item_p, .daydream_item_active, .daydream_item_active_p {
 	display: flex;
+	position: relative;
 	flex-direction: column;
 	min-height: 50px;
-	margin: 0 0 20px 0; padding: 30px 40px;
-	background-color:rgba(0, 0, 0, 40%);
+	margin: 0 0 20px 0;
+	padding: 30px 40px;
+	background-color: rgba(0, 0, 0, 40%);
 	border-radius: 5px;
+	box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.8);
 }
-	.daydream_list p, .daydream_list_p p, .daydream_item_active p, .daydream_item_active_p p{
-		text-indent: 2em;	/*首行缩进*/
+	.daydream_list p, .daydream_list_p p, .daydream_item_active p, .daydream_item_active_p p {
+		text-indent: 2em; /*首行缩进*/
 		display: -webkit-box;
 		-webkit-box-orient: vertical;
 		-webkit-line-clamp: 5;
 		overflow: hidden;
 		text-overflow: ellipsis;
+		text-shadow: 0 0 2px black;
 		transition: all 0.8s;
-		pointer-events: none;	/*忽略鼠标事件*/
+		pointer-events: none; /*忽略鼠标事件*/
 	}
 	.daydream_list div:hover p, .daydream_list_p div:hover p, .daydream_item_active div:hover p, .daydream_item_active_p div:hover p{
 		-webkit-line-clamp: 100;
 	}
 	.daydream_list span, .daydream_list_p span, .daydream_item_active span, .daydream_item_active_p span{
 		display: block;
+		margin-top: 0.5em;
 		text-indent: 2em;	/*首行缩进*/
 		pointer-events: none;	/*忽略鼠标事件*/
 	}
@@ -108,8 +113,21 @@
 	pointer-events: none;	/*忽略鼠标事件*/
 }
 
+.daydream_id, .daydream_id_p {
+	position: absolute;
+	top: 0;
+	left: 15px;
+	opacity: 0.2;
+	font-family: 'FZCuHeiSong';
+	color: var(--var-color-gray);
+	font-size: 5em;
+}
+.daydream_id_p {
+	font-size: 4em;
+}
+
 .daydream_buttons, .daydream_buttons_p{
-	display:flex;
+	display: flex;
 	flex-direction: row-reverse;
 	height: 50px;
 	padding-right: 25%;

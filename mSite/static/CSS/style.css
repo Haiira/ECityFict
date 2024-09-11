@@ -74,7 +74,7 @@ body::-webkit-scrollbar-track {
 /*透明主框图*/
 #main{
     margin: auto;
-    width: 75%; min-height: 600px;
+    width: 72%; min-height: 600px;
 }
 
 /*网页抬头菜单栏*/

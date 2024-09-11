@@ -88,6 +88,7 @@
             scrollHeight = getScrollHeight();
             availHeight = getWindowHeight();
 
+            // 设置手机版格式
             if (checkAgent() == 'Phone') {
                 let itemList = document.getElementsByClassName("daydream_item");
                 let listLength = itemList.length
@@ -124,9 +125,12 @@
 
         function prepareNotes(){
             for (let key in dataD) {
+
+                if (dataD[key].display === "False") continue;
+
                 dataList.push(key);
-                dataD[key].tag.forEach(function(item){
-                    if (tagsList.indexOf(item)==-1){
+                dataD[key].tag.forEach(function(item){  // 检查tag是否已经被记录
+                    if (tagsList.indexOf(item) == -1){
                         tagsList.push(item)
                     }
                 })
@@ -141,7 +145,8 @@
         function loadNotes(){
 
             my$("daydreamList").innerHTML = "";  // 清空List
-            
+
+            // 设置卡片内容
             for (let index in dataL){
                 if (!Array.prototype.hasOwnProperty.call(dataL, index)) break;
                 
@@ -150,22 +155,31 @@
                 newDiv.id = "daydreamItem_" + index
 
                 let newP = document.createElement("p");
-                newP.innerHTML = dataD[dataL[index]].content;
+                newP.innerHTML = dataD[dataL[index]].content.replace(/\n/g, "</span><span>");
                 for (let i=0; i<tagList.length; i++){
                     newP.innerHTML = newP.innerHTML.replace(tagList[i],`<b>${tagList[i]}</b>`);
                 }
-                
+
+                // 时间（和条目ID）
                 let newTime = document.createElement("div");
-                newTime.innerText = dataD[dataL[index]].time;
+                newTime.innerText = dataD[dataL[index]].time + " NO." + dataL[index];
                 newTime.className = "daydream_time gray";
 
-                newDiv.append(newP);
+                // ID
+                let newID = document.createElement("div");
+                newID.innerText = dataL[index];
+                newID.className = "daydream_id" + _p;
+
+                // 填充卡片
+                newDiv.append(newP); 
                 newDiv.append(newTime);
+                newDiv.append(newID);
                 newDiv = newDiv.outerHTML;
                 my$("daydreamList").innerHTML += newDiv;
             }
         }
 
+        // 读取TAG
         function loadTags(){
             for (let index in tagsList){
                 if (!Array.prototype.hasOwnProperty.call(dataL, index)) break;
@@ -179,6 +193,7 @@
             }
         }
 
+        // 换页
         function changePage(page){
             count = (page==0)? 0 : count + (20 * page);
             dataL = dataSelected.slice(count, count+20);
@@ -219,6 +234,9 @@
             dataSelected = []
             for (let key in dataD){
                 for (let i = 0; i < tagList.length; i++){
+
+                    if (dataD[key].display === "False") continue;
+
                     if (dataD[key].tag.includes(tagList[i]) || dataD[key].content.indexOf(tagList[i]) != -1){
                         dataSelected.push(key);
                         break;

@@ -17,6 +17,7 @@
 
     <script src="../static/data/Markdown/CharacterCollection.json?callback=getMarkdownForCharacter"></script>
     <script src="../static/data/gallery.json?callback=getImg"></script>
+</head>
 
 <body>
 
@@ -35,7 +36,6 @@
         本世界观完全架空，当中提及的一切人物、团体、事件等纯属虚构。
     </div>
 
-    </script>
 
     <!--背景-->
     <div id="BG">
@@ -73,6 +73,8 @@
 
             scrollHeight = getScrollHeight();
             availHeight = getWindowHeight();
+
+            if (checkAgent() == 'Phone') {detailPhone()}
         })
 
         function showMarkdown(id){
@@ -83,7 +85,7 @@
                 try{
                     my$("headImg").src = dataG[id].id_picture;
                     my$("headImg").className = "detail_headIMG";
-                    my$("id").parentNode.style.position = "relative";
+                    my$("headImg").parentNode.className = "detail_headIMGsP";
                 }catch(err){}
             }else{
                 my$("detailContent").classList.remove('detail_content')
@@ -102,9 +104,16 @@
     </script>
 
     <script>
-        if (checkAgent() == 'Phone') {
+        function detailPhone() {
             my$("logo").className = "banner_logo_p";
             my$("detailContent").className = "detail_content_p";
+
+            let introduce = document.createElement("div");
+            introduce.innerHTML = my$("introduction").innerHTML;
+            my$("introduction").innerHTML = "";
+
+            my$("headImg").parentNode.insertAdjacentElement("afterend", introduce)
+            return
         }
     </script>
 
