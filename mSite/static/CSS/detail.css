@@ -129,7 +129,7 @@ p {
 	}
 	.detail_content_p h1::before, .detail_content_p h1::after{
 		width: 5px; height: 20px;
-		border-width: 8px;
+		border-width: 5px;
 	}
 	.detail_content_p h1::before{
 		left: -20px; top: -8px;

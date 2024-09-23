@@ -25,7 +25,6 @@
     <div class="banner">
         <a href="../../index.html">
             <img id="logo" class="banner_logo" style="cursor:pointer;" src="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png" />
-            <div id="cubeBH"></div>
         </a>
         <a href="relationship.html"><div>关系网</div></a>
         <a href="pictorial.html"><div>角色图鉴</div></a>
@@ -108,6 +107,9 @@
         function detailPhone() {
             my$("logo").className = "banner_logo_p";
             my$("detailContent").className = "detail_content_p";
+
+            my$("main").style.width = "95%";
+            my$("main").style.padding = "0% 5%";
 
             let introduce = document.createElement("div");
             introduce.innerHTML = my$("introduction").innerHTML;
