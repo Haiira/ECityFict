@@ -3,40 +3,20 @@
   "WorkspaceRootPath": "D:\\Git\\GitSharedProjects\\ECityFict\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{374C706A-0ACC-406B-B882-D28AF9F0C498}|CSS{374C706A-0ACC-406B-B882-D28AF9F0C498}|D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\CSS\\detail.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{374C706A-0ACC-406B-B882-D28AF9F0C498}|CSS{374C706A-0ACC-406B-B882-D28AF9F0C498}|solutionrelative:mSite\\static\\CSS\\detail.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|Templates{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\detail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|Templates{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|solutionrelative:mSite\\templates\\detail.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|Templates{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\relationship.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|Templates{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|solutionrelative:mSite\\templates\\relationship.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{374C706A-0ACC-406B-B882-D28AF9F0C498}|CSS{374C706A-0ACC-406B-B882-D28AF9F0C498}|D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\CSS\\detail.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{374C706A-0ACC-406B-B882-D28AF9F0C498}|CSS{374C706A-0ACC-406B-B882-D28AF9F0C498}|solutionrelative:mSite\\static\\CSS\\detail.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CF5535F0-A679-4775-9F2F-17490FDC66D6}|JS{CF5535F0-A679-4775-9F2F-17490FDC66D6}|D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\JS\\general.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{CF5535F0-A679-4775-9F2F-17490FDC66D6}|JS{CF5535F0-A679-4775-9F2F-17490FDC66D6}|solutionrelative:mSite\\static\\JS\\general.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{374C706A-0ACC-406B-B882-D28AF9F0C498}|CSS{374C706A-0ACC-406B-B882-D28AF9F0C498}|D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\CSS\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{374C706A-0ACC-406B-B882-D28AF9F0C498}|CSS{374C706A-0ACC-406B-B882-D28AF9F0C498}|solutionrelative:mSite\\static\\CSS\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DAAF7176-FE5E-4F5B-B305-277DD36DFAEA}|static{DAAF7176-FE5E-4F5B-B305-277DD36DFAEA}|D:\\Git\\GitSharedProjects\\ECityFict\\index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DAAF7176-FE5E-4F5B-B305-277DD36DFAEA}|static{DAAF7176-FE5E-4F5B-B305-277DD36DFAEA}|solutionrelative:index.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{374C706A-0ACC-406B-B882-D28AF9F0C498}|CSS{374C706A-0ACC-406B-B882-D28AF9F0C498}|D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\CSS\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{374C706A-0ACC-406B-B882-D28AF9F0C498}|CSS{374C706A-0ACC-406B-B882-D28AF9F0C498}|solutionrelative:mSite\\static\\CSS\\index.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|Templates{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\pictorial.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|Templates{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|solutionrelative:mSite\\templates\\pictorial.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|Templates{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\daydreams.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|Templates{A05CE371-C282-4396-8A32-5FB4CB9F74AB}|solutionrelative:mSite\\templates\\daydreams.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,7 +26,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 72,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -54,110 +34,46 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
+              "Title": "general.js",
+              "DocumentMoniker": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\JS\\general.js",
+              "RelativeDocumentMoniker": "mSite\\static\\JS\\general.js",
+              "ToolTip": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\JS\\general.js",
+              "RelativeToolTip": "mSite\\static\\JS\\general.js",
+              "ViewState": "AgIAAGgAAAAAAAAAAAAAwHsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-09-23T16:04:10.373Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "detail.html",
               "DocumentMoniker": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\detail.html",
               "RelativeDocumentMoniker": "mSite\\templates\\detail.html",
               "ToolTip": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\detail.html",
               "RelativeToolTip": "mSite\\templates\\detail.html",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAACEAAAAEAAAAAAAAAA==",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAAAHQAAAAtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
               "WhenOpened": "2024-09-23T12:13:41.68Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "relationship.html",
-              "DocumentMoniker": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\relationship.html",
-              "RelativeDocumentMoniker": "mSite\\templates\\relationship.html",
-              "ToolTip": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\relationship.html",
-              "RelativeToolTip": "mSite\\templates\\relationship.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-09-23T12:13:32.525Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "daydreams.html",
-              "DocumentMoniker": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\daydreams.html",
-              "RelativeDocumentMoniker": "mSite\\templates\\daydreams.html",
-              "ToolTip": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\daydreams.html",
-              "RelativeToolTip": "mSite\\templates\\daydreams.html",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABYAAABmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-09-23T11:57:40.456Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "style.css",
-              "DocumentMoniker": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\CSS\\style.css",
-              "RelativeDocumentMoniker": "mSite\\static\\CSS\\style.css",
-              "ToolTip": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\CSS\\style.css",
-              "RelativeToolTip": "mSite\\static\\CSS\\style.css",
-              "ViewState": "AgIAAHwAAAAAAAAAAAAAANUAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-23T11:42:39.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "general.js",
-              "DocumentMoniker": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\JS\\general.js",
-              "RelativeDocumentMoniker": "mSite\\static\\JS\\general.js",
-              "ToolTip": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\JS\\general.js",
-              "RelativeToolTip": "mSite\\static\\JS\\general.js",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHwAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-09-23T11:41:58.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "index.css",
-              "DocumentMoniker": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\CSS\\index.css",
-              "RelativeDocumentMoniker": "mSite\\static\\CSS\\index.css",
-              "ToolTip": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\CSS\\index.css",
-              "RelativeToolTip": "mSite\\static\\CSS\\index.css",
-              "ViewState": "AgIAAGYAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-09-23T11:35:29.103Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "index.html",
-              "DocumentMoniker": "D:\\Git\\GitSharedProjects\\ECityFict\\index.html",
-              "RelativeDocumentMoniker": "index.html",
-              "ToolTip": "D:\\Git\\GitSharedProjects\\ECityFict\\index.html",
-              "RelativeToolTip": "index.html",
-              "ViewState": "AgIAAGkAAAAAAAAAAAAAAJUAAAA5AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-09-23T10:18:27.159Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "detail.css",
               "DocumentMoniker": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\CSS\\detail.css",
               "RelativeDocumentMoniker": "mSite\\static\\CSS\\detail.css",
               "ToolTip": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\static\\CSS\\detail.css",
               "RelativeToolTip": "mSite\\static\\CSS\\detail.css",
-              "ViewState": "AgIAAG8AAAAAAAAAAAAAAHsAAAALAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
               "WhenOpened": "2024-09-23T14:57:25.034Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 3,
               "Title": "pictorial.html",
               "DocumentMoniker": "D:\\Git\\GitSharedProjects\\ECityFict\\mSite\\templates\\pictorial.html",
               "RelativeDocumentMoniker": "mSite\\templates\\pictorial.html",
@@ -165,7 +81,8 @@
               "RelativeToolTip": "mSite\\templates\\pictorial.html",
               "ViewState": "AgIAAAkAAAAAAAAAAADwvy4AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2024-09-23T12:13:36.916Z"
+              "WhenOpened": "2024-09-23T12:13:36.916Z",
+              "EditorCaption": ""
             }
           ]
         }

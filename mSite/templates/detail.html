@@ -23,7 +23,7 @@
 
     <!--抬头菜单栏-->
     <a href="../../index.html">
-        <div id="cubeBH" class="cubeBackhome" style="background-color: var(--var-color-white)"></div>
+        <div id="cubeBH" class="cubeBackhome" style="background-color: var(--var-color-white); opacity: 0"></div>
     </a>
     <div class="banner">
         <img id="logo" class="banner_logo" style="cursor:pointer;" src="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png" />
@@ -58,7 +58,7 @@
     </div>
     <script type="text/javascript">
 
-        var dataC, dataG
+        var dataC, dataG, _ca
         var mainHeight, scrollHeight, availHeight
 
 
@@ -100,6 +100,7 @@
             let move = (scrollTop / (scrollHeight - availHeight)) * (mainHeight - availHeight);
             my$('logo').style.opacity = 0.9 - scrollTop / 100
             my$('line').style.opacity = scrollTop / 300 - 0.2
+            my$('cubeBH').style.opacity = scrollTop / 100 + _ca
             //console.log('(' + scrollTop + '/(' + scrollHeight + '-' + availHeight +')) * ('+mainHeight +'-'+ availHeight+'))')
             my$('BG').style.top = -move + 'px';
         })
@@ -110,11 +111,15 @@
             my$("logo").style.display = "none";
             my$("detailContent").className = "detail_content_p";
 
-            my$("main").style.width = "90%";
-            my$("main").style.padding = "0% 5%";
+            my$("cubeBH").style.opacity = 1;
+            _ca = 1;
+            my$("main").style.width = "86%";
+            my$("main").style.padding = "0% 4%";
+            my$("line").style.left = "2%";
 
             let introduce = document.createElement("div");
             introduce.innerHTML = my$("introduction").innerHTML;
+            introduce.className = "introduction_p";
             my$("introduction").innerHTML = "";
 
             my$("headImg").parentNode.insertAdjacentElement("afterend", introduce)

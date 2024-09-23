@@ -20,6 +20,11 @@ id{
 	text-indent: 0em;
 	font-size: small;
 }
+.introduction_p{
+	padding-left: 18px;
+	font-size: smaller;
+	opacity: 0.6;
+}
 
 hr {
 	opacity: 80%;
@@ -118,11 +123,8 @@ p {
 
 .detail_content_p{
 	width: 100%;
-	margin: 80px 0 0 0;
+	margin: 30px 0 0 0;
 }
-	.detail_content_p .banner_line{
-		left: 2%;
-	}
 	.detail_content_p p {
 		text-indent: 1em;
 	}
@@ -139,7 +141,7 @@ p {
 	}
 	.detail_content_p h3 {
 		background: linear-gradient(to right, rgba(0,0,0,40%), rgba(0,0,0,0) 45%);
-		padding-left: 3px;
+		padding-left: 10px;
 	}
 	.detail_content_p h4 {
 		width: 40%;
@@ -148,7 +150,7 @@ p {
 		left: 15px;
 	}
 	.detail_content_p #nameEN{
-		left: 40px;
+		left: 50px; top: 15px;
 		font-size: 2em;
 		font-weight: normal;
 	}
