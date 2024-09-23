@@ -114,10 +114,27 @@ function checkAgent() {
     } else {
         try {
             my$("main").style.fontSize = "smaller";
+            my$("main").style.width = "85%";
             }
         catch(err) {
             console.log("[Notice] 此页面没有Main组件")
         }
+
+        try {
+            my$("line").style.left = "5%";
+        }
+        catch (err) {
+            console.log("[Notice] 此页面没有Line组件")
+        }
+
+        try {
+            my$("cubeBH").className = "";
+            my$("cubeBH").innerHTML = '<img class="cube_logo" src="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png" />'
+        }
+        catch (err) {
+            console.log("[Notice] 此页面没有cubeBackhome组件")
+        }
+
         return 'Phone';
     }
 }

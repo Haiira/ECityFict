@@ -14,6 +14,8 @@
     <script src="https://libs.baidu.com/jquery/2.1.4/jquery.min.js"></script>
     <script type="text/JavaScript" src="mSite/static/JS/general.js"></script>
 
+</head>
+
 <body>
 
     <!--抬头菜单栏-->
@@ -22,6 +24,7 @@
         <a href="mSite/templates/relationship.html"><div>关系网</div></a>
         <a href="mSite/templates/pictorial.html"><div>角色图鉴</div></a>
         <a href="mSite/templates/daydreams.html"><div>白日梦</div></a>
+    <!--左侧装饰线-->
     </div><div id="line" class="banner_line"></div>
 
     <!--左下角虚构注意-->
@@ -29,7 +32,6 @@
         本世界观完全架空，当中提及的一切人物、团体、事件等纯属虚构。
     </div>
 
-    </script>
 
     <!--背景-->
     <div id="BG">
@@ -40,11 +42,11 @@
 
         <!--大标题-->
         <div class="index_header_background">
-            <div style="width:75%;">
-                <p class="index_main_header">安城纪事</p>
-                <p class="index_main_en">- Endrosa City Fiction -</p>
+            <div id="mainHeaderBox"style="width:75%; min-width:500px">
+                <p id="mainHeader" class="index_main_header">安城纪事</p>
+                <p class="index_main_en">- Enphess City Fiction -</p>
             </div>
-            <div class="index_head_introduction">
+            <div id="mainHeaderBoxR" class="index_head_introduction">
                 《安城纪事》是一个完全架空的原创世界观体系。<br/>
                 剩下的我没想好！
             </div>
@@ -74,7 +76,7 @@
             <div class="index_world_content">
                 未知纪元的近未来时间点，人类与亚人类共同瓜分了大地以上的区域，各自为政、展开了为时数百年的权力战争。<br/>
                 时至今日，尘埃落定。在一切必要与非必要的斗争都趋于安稳之际，人类智者带领着他们所选定的同族人们，在曾经的战区建起了一座城。<br/>
-                这座城被命名为<span class="blue">“安德罗萨”</span>（Endrosa），意为共存与和平。<br/><br/>
+                这座城被命名为<span class="blue">“安斐斯”</span>（Enphess），意为共存与和平。<br/><br/>
                 而就如这座城其名称的意义所在，为了实现彻底的中立，城邦毅然脱离了人类政权的保护伞，成为了完全独立的中间势力。<br/>
                 但智者们所期待的康庄大道并未如愿展开，失去了立场的安德罗萨城，最终迎来的并非橄榄枝，而是来自两个种族的恶意与排斥。<br/>
                 而后50年，直到居民们都不愿再次提起历史，真正的故事才就此展开。
@@ -88,18 +90,18 @@
             </div>
             <div class="index_world_content index_world_content_P">
                 <p>
-                <span class="blue">安德罗萨</span> | <span class="gray">Enderosa</span><br/>
+                <span class="blue">安斐斯</span> | <span class="gray">Enphess</span><br/>
                 大陆中部的独立城邦，不归属任何势力的灰色地带。<br/>
-                目前的管理者是以武力雇佣为经营主业的「德科尔事务所」。
+                目前的管理者是以武力雇佣为经营主业的「D事务所」。
                 </p>
                 <p>
-                <span class="blue">德科尔事务所</span> | <span class="gray">DhesCrop Security</span><br/>
-                也称DCS，以贩卖武装力量为主业的雇佣制事务所，安德罗萨城邦的现任管理组织。<br/>
+                <span class="blue">D事务所</span> | <span class="gray">D-Security Company</span><br/>
+                通常简写为DSC，以贩卖武装力量为主业的雇佣制事务所，也自称作安保公司，安斐斯城现任的管理组织。<br/>
                 通过特殊计算机高强度掌控着城邦内部的信息，限制了相当一部分知识的流通。
                 </p>
                 <p>
-                <span class="blue">虚像长廊</span> | <span class="gray">Imagine Gallery</span><br/>
-                安德罗萨城邦内信仰知识与信息之神明「伊凯洛斯」的宗教团体，发展得到了事务所的默许。
+                <span class="blue">幻书廊</span> | <span class="gray">Imagine Gallery</span><br/>
+                安斐斯城内信仰知识与信息之神明「伊卡洛斯」的宗教团体，发展得到了事务所的默许。
                 </p>
                 <p>
                 <span class="blue">喀拉托利神教</span> | <span class="gray">Karehto</span><br/>
@@ -107,9 +109,9 @@
                 总部似乎位于安德罗萨城邦北郊。
                 </p>
                 <p>
-                <span class="blue">阿卡斯托亚克公国</span> ｜<span class="gray">Akastoak</span><br/>
-                位于大陆中部，梅洛法斯特帝国的附属公国：阿卡斯托亚克，位于安德罗萨城邦西北侧，领土与其比邻接壤。<br/>
-                通常简写为阿卡斯，执政者为第二十二任王女「玛莎•金尼」。
+                <span class="blue">阿卡索弗特公国</span> ｜<span class="gray">Aka-Sufort</span><br/>
+                位于大陆中部，梅洛法斯特帝国的附属公国：阿卡索弗特，位于安斐斯城西北侧，领土与其比邻接壤。<br/>
+                通常简写为阿卡索，执政者为第二十二任王女「玛莎•金尼」。
                 </p>
             </div>
         </div>
@@ -141,8 +143,11 @@
 
     <script>
         if (checkAgent() == 'Phone') {
-            my$("logo").className = "banner_logo_p";
+            my$("logo").style.display = "none";
             my$("indexOC").className = "index_OC_p";
+            my$("mainHeader").className = "index_main_header_p";
+            my$("mainHeaderBox").style.minWidth = "auto";
+            my$("mainHeaderBoxR").style.display = "none";
         }
     </script>
 

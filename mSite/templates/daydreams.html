@@ -20,7 +20,7 @@
 
 <body>
     <a href="../../index.html">
-        <div class="cubeBackhome" style="background-color: var(--var-color-white)" ></div>
+        <div id="cubeBH" class="cubeBackhome" style="background-color: var(--var-color-white)" ></div>
     </a>
     <div class="banner">
         <a href="relationship.html"><div>关系网</div></a>
@@ -40,9 +40,9 @@
 
     <div id="main">
         <!--抬头栏-->
-        <div id="daydreamMenu" class="daydream_menu">
+        <div id="daydreamMenu" class="daydream_menu" style="display: none">
             <div>
-                <input type="text" id="inputSearch" maxlength="8" size="10" placeholder="搜索关键字"></input>
+                <input type="text" id="inputSearch" maxlength="8" size="10" placeholder="搜索关键字"/>
             </div>
             <div id="daydreamTags" class="daydream_tags"></div>
             <div id="daydreamSortList"></div>
@@ -50,7 +50,7 @@
 
         <div class="line" style="margin: 15px 30px;"></div>
 
-        <div style="display:flex; flex-direction: raw;">
+        <div style="display:flex; flex-direction:raw;">
             <div id="daydreamList" class="daydream_list"></div>
             <div id="daydreamSideList" class="daydream_sideList">
                 <div id="beforePage_top" class="daydream_button_top" onclick="changePage(-1)"><</div>
@@ -106,7 +106,6 @@
             document.querySelector("#daydreamList").addEventListener("click", function(e){
                 let target = e.target || e.srcElement;
                 e.stopPropagation()
-                console.log(target)
                 if (target && target.className == "daydream_item" + _p){
                     target.className = "daydream_item_active" + _p
                 }else if (target && target.className == "daydream_item_active" + _p){

@@ -15,7 +15,7 @@
 }
 
 /*大标题文字*/
-.index_main_header{
+.index_main_header, .index_main_header_p {
     width: 80%;
     min-width: 200px;
     margin: 5% 0% 5% 10%;
@@ -24,6 +24,10 @@
     font-size: 100px;
     text-shadow: 4px 4px 10px rgb(2, 0, 34);
 }
+.index_main_header_p {
+    margin: 5% 0% 5% 7%;
+}
+
 
 /*英文副标题*/
 .index_main_en{
