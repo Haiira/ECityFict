@@ -22,15 +22,16 @@
 <body>
 
     <!--抬头菜单栏-->
+    <a href="../../index.html">
+        <div id="cubeBH" class="cubeBackhome" style="background-color: var(--var-color-white)"></div>
+    </a>
     <div class="banner">
-        <a href="../../index.html">
-            <div id="cubeBH" class="cubeBackhome" style="background-color: var(--var-color-white)"></div>
-        </a>
         <img id="logo" class="banner_logo" style="cursor:pointer;" src="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png" />
         <a href="relationship.html"><div>关系网</div></a>
         <a href="pictorial.html"><div>角色图鉴</div></a>
         <a href="daydreams.html"><div>白日梦</div></a>
-    </div><div id="line" class="banner_line"></div>
+    </div>
+    <div id="line" class="banner_line"></div>
 
     <!--左下角虚构注意-->
     <div id="notice" class="notice">
@@ -61,7 +62,7 @@
         var mainHeight, scrollHeight, availHeight
 
 
-        $(document).ready(function(){
+        $(document).ready(function () {
             dataC = dataCharacterM;
             dataG = dataGallery;
 
@@ -75,22 +76,22 @@
             scrollHeight = getScrollHeight();
             availHeight = getWindowHeight();
 
-            if (checkAgent() == 'Phone') {detailPhone()}
+            if (checkAgent() == 'Phone') { detailPhone() }
         })
 
-        function showMarkdown(id){
-            if(id && dataC[id]){
+        function showMarkdown(id) {
+            if (id && dataC[id]) {
                 let converter = new showdown.Converter();
                 my$("detailContent").innerHTML = converter.makeHtml(dataC[id]);
                 my$("detailContent").classList.remove('center');
-                try{
+                try {
                     my$("headImg").src = dataG[id].id_picture;
                     my$("headImg").className = "detail_headIMG";
                     my$("headImg").parentNode.className = "detail_headIMGsP";
-                }catch(err){}
-            }else{
+                } catch (err) { }
+            } else {
                 my$("detailContent").classList.remove('detail_content')
-                setMainHeight( minus=100 )
+                setMainHeight(minus = 100)
             }
         }
 

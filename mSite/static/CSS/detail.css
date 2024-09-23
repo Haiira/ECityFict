@@ -120,30 +120,26 @@ p {
 	width: 100%;
 	margin: 80px 0 0 0;
 }
+	.detail_content_p .banner_line{
+		left: 2%;
+	}
 	.detail_content_p p {
 		text-indent: 1em;
 	}
 	.detail_content_p h1 {
-		margin: 0 0 15px 0;
+		margin: 0 0 15px 20px;
 		font-size: 2.3em;
 	}
 	.detail_content_p h1::before, .detail_content_p h1::after{
-		width: 5px; height: 20px;
-		border-width: 5px;
-	}
-	.detail_content_p h1::before{
-		left: -20px; top: -8px;
-		border-top-width: 5px;
-	}
-	.detail_content_p h1::after{
-		right: -20px; bottom: -8px;
-		border-bottom-width: 5px;
+		border-width: 0px;
+		box-shadow: none;
 	}
 	.detail_content_p h2 {
 		margin: 15px 0 20px 0;
 	}
 	.detail_content_p h3 {
 		background: linear-gradient(to right, rgba(0,0,0,40%), rgba(0,0,0,0) 45%);
+		padding-left: 3px;
 	}
 	.detail_content_p h4 {
 		width: 40%;
