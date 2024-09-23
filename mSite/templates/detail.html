@@ -24,8 +24,9 @@
     <!--抬头菜单栏-->
     <div class="banner">
         <a href="../../index.html">
-            <img id="logo" class="banner_logo" style="cursor:pointer;" src="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png" />
+            <div id="cubeBH" class="cubeBackhome" style="background-color: var(--var-color-white)"></div>
         </a>
+        <img id="logo" class="banner_logo" style="cursor:pointer;" src="https://pic.imgdb.cn/item/658183dbc458853aef5555aa.png" />
         <a href="relationship.html"><div>关系网</div></a>
         <a href="pictorial.html"><div>角色图鉴</div></a>
         <a href="daydreams.html"><div>白日梦</div></a>
@@ -105,10 +106,10 @@
 
     <script>
         function detailPhone() {
-            my$("logo").className = "banner_logo_p";
+            my$("logo").style.display = "none";
             my$("detailContent").className = "detail_content_p";
 
-            my$("main").style.width = "95%";
+            my$("main").style.width = "90%";
             my$("main").style.padding = "0% 5%";
 
             let introduce = document.createElement("div");
